@@ -1,0 +1,396 @@
+{
+  "sq": {
+    "code": "sq",
+    "name": "Albanian",
+    "status": false
+  },
+  "af": {
+    "code": "af",
+    "name": "Afrikaans",
+    "status": false
+  },
+  "ar": {
+    "code": "ar",
+    "name": "Arabic",
+    "status": false
+  },
+  "hy": {
+    "code": "hy",
+    "name": "Armenian",
+    "status": false
+  },
+  "az": {
+    "code": "az",
+    "name": "Azeri (Latin)",
+    "status": false
+  },
+  "eu": {
+    "code": "eu",
+    "name": "Basque",
+    "status": false
+  },
+  "be": {
+    "code": "be",
+    "name": "Belarusian",
+    "status": false
+  },
+  "bg": {
+    "code": "bg",
+    "name": "Bulgarian",
+    "status": false
+  },
+  "ca": {
+    "code": "ca",
+    "name": "Catalan",
+    "status": false
+  },
+  "zh": {
+    "code": "cn",
+    "name": "简体中文",
+    "status": true
+  },
+  "hr": {
+    "code": "hr",
+    "name": "Croatian",
+    "status": false
+  },
+  "cs": {
+    "code": "cs",
+    "name": "Czech",
+    "status": false
+  },
+  "da": {
+    "code": "da",
+    "name": "Danish",
+    "status": false
+  },
+  "dv": {
+    "code": "dv",
+    "name": "Divehi",
+    "status": false
+  },
+  "nl": {
+    "code": "nl",
+    "name": "Dutch",
+    "status": false
+  },
+  "en": {
+    "code": "en",
+    "name": "English",
+    "status": true
+  },
+  "eo": {
+    "code": "eo",
+    "name": "Esperanto",
+    "status": false
+  },
+  "et": {
+    "code": "et",
+    "name": "Estonian",
+    "status": false
+  },
+  "fa": {
+    "code": "fa",
+    "name": "Farsi",
+    "status": false
+  },
+  "fi": {
+    "code": "fi",
+    "name": "Finnish",
+    "status": false
+  },
+  "fo": {
+    "code": "fo",
+    "name": "Faroese",
+    "status": false
+  },
+  "fr": {
+    "code": "fr",
+    "name": "French",
+    "status": false
+  },
+  "mk": {
+    "code": "mk",
+    "name": "FYRO Macedonian",
+    "status": false
+  },
+  "de": {
+    "code": "de",
+    "name": "German",
+    "status": false
+  },
+  "el": {
+    "code": "el",
+    "name": "Greek",
+    "status": false
+  },
+  "gl": {
+    "code": "gl",
+    "name": "Galician",
+    "status": false
+  },
+  "ka": {
+    "code": "ka",
+    "name": "Georgian",
+    "status": false
+  },
+  "gu": {
+    "code": "gu",
+    "name": "Gujarati",
+    "status": false
+  },
+  "he": {
+    "code": "he",
+    "name": "Hebrew",
+    "status": false
+  },
+  "hi": {
+    "code": "hi",
+    "name": "Hindi",
+    "status": false
+  },
+  "hu": {
+    "code": "hu",
+    "name": "Hungarian",
+    "status": false
+  },
+  "id": {
+    "code": "id",
+    "name": "Indonesian",
+    "status": false
+  },
+  "is": {
+    "code": "is",
+    "name": "Icelandic",
+    "status": false
+  },
+  "it": {
+    "code": "it",
+    "name": "Italian",
+    "status": false
+  },
+  "ja": {
+    "code": "jp",
+    "name": "日本語",
+    "status": true
+  },
+  "kk": {
+    "code": "kk",
+    "name": "Kazakh",
+    "status": false
+  },
+  "kn": {
+    "code": "kn",
+    "name": "Kannada",
+    "status": false
+  },
+  "ko": {
+    "code": "ko",
+    "name": "한국어",
+    "status": true
+  },
+  "kok": {
+    "code": "kok",
+    "name": "Konkani",
+    "status": false
+  },
+  "ky": {
+    "code": "ky",
+    "name": "Kyrgyz",
+    "status": false
+  },
+  "lt": {
+    "code": "lt",
+    "name": "Lithuanian",
+    "status": false
+  },
+  "lv": {
+    "code": "lv",
+    "name": "Latvian",
+    "status": false
+  },
+  "mi": {
+    "code": "mi",
+    "name": "Maori",
+    "status": false
+  },
+  "mn": {
+    "code": "mn",
+    "name": "Mongolian",
+    "status": false
+  },
+  "mr": {
+    "code": "mr",
+    "name": "Marathi",
+    "status": false
+  },
+  "ms": {
+    "code": "ms",
+    "name": "Malay",
+    "status": false
+  },
+  "mt": {
+    "code": "mt",
+    "name": "Maltese",
+    "status": false
+  },
+  "nb": {
+    "code": "nb",
+    "name": "Norwegian (Bokm?l)",
+    "status": false
+  },
+  "ns": {
+    "code": "ns",
+    "name": "Northern Sotho",
+    "status": false
+  },
+  "pa": {
+    "code": "pa",
+    "name": "Punjabi",
+    "status": false
+  },
+  "pl": {
+    "code": "pl",
+    "name": "Polish",
+    "status": false
+  },
+  "ps": {
+    "code": "ps",
+    "name": "Pashto",
+    "status": false
+  },
+  "pt": {
+    "code": "pt",
+    "name": "português",
+    "status": true
+  },
+  "qu": {
+    "code": "qu",
+    "name": "Quechua",
+    "status": false
+  },
+  "ro": {
+    "code": "ro",
+    "name": "Romanian",
+    "status": false
+  },
+  "ru": {
+    "code": "ru",
+    "name": "Russian",
+    "status": false
+  },
+  "sa": {
+    "code": "sa",
+    "name": "Sanskrit",
+    "status": false
+  },
+  "se": {
+    "code": "se",
+    "name": "Sami (Northern)",
+    "status": false
+  },
+  "sk": {
+    "code": "sk",
+    "name": "Slovak",
+    "status": false
+  },
+  "sl": {
+    "code": "sl",
+    "name": "Slovenian",
+    "status": false
+  },
+  "es": {
+    "code": "es",
+    "name": "Español",
+    "status": true
+  },
+  "sv": {
+    "code": "sv",
+    "name": "Swedish",
+    "status": false
+  },
+  "sw": {
+    "code": "sw",
+    "name": "Swahili",
+    "status": false
+  },
+  "syr": {
+    "code": "syr",
+    "name": "Syriac",
+    "status": false
+  },
+  "ta": {
+    "code": "ta",
+    "name": "Tamil",
+    "status": false
+  },
+  "te": {
+    "code": "te",
+    "name": "Telugu",
+    "status": false
+  },
+  "th": {
+    "code": "th",
+    "name": "ภาษาไทย",
+    "status": false
+  },
+  "tl": {
+    "code": "tl",
+    "name": "Tagalog",
+    "status": false
+  },
+  "tn": {
+    "code": "tn",
+    "name": "Tswana",
+    "status": false
+  },
+  "tr": {
+    "code": "tr",
+    "name": "Turkish",
+    "status": false
+  },
+  "tt": {
+    "code": "tt",
+    "name": "Tatar",
+    "status": false
+  },
+  "ts": {
+    "code": "ts",
+    "name": "Tsonga",
+    "status": false
+  },
+  "uk": {
+    "code": "uk",
+    "name": "Ukrainian",
+    "status": false
+  },
+  "ur": {
+    "code": "ur",
+    "name": "Urdu",
+    "status": false
+  },
+  "uz": {
+    "code": "uz",
+    "name": "Uzbek (Latin)",
+    "status": false
+  },
+  "vi": {
+    "code": "vn",
+    "name": "Tiếng Việt",
+    "status": true
+  },
+  "cy": {
+    "code": "cy",
+    "name": "Welsh",
+    "status": false
+  },
+  "xh": {
+    "code": "xh",
+    "name": "Xhosa",
+    "status": false
+  },
+  "zu": {
+    "code": "zu",
+    "name": "Zulu"
+  }
+}

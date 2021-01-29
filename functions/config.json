@@ -1,0 +1,13 @@
+{
+    "aws": {
+      "default": {
+        "region": "ap-northeast-2"
+      },
+      "S3": {
+        "region": "ap-northeast-2",
+        "bucket": "argos-applicant-images-test",
+        "baseUrl": "https://s3-ap-northeast-2.amazonaws.com/argos-applicant-images-test/"
+      }
+    },
+    "project": ""
+  }

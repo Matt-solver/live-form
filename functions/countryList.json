@@ -1,0 +1,1202 @@
+{
+  "Afghanistan": {
+    "name": "Afghanistan",
+    "value": "AFG",
+    "korNm": "아프가니스탄",
+    "status": true
+  },
+  "Albania": {
+    "name": "Albania",
+    "value": "ALB",
+    "korNm": "알바니아",
+    "status": true
+  },
+  "Algeria": {
+    "name": "Algeria",
+    "value": "ALG",
+    "korNm": "알제리",
+    "status": true
+  },
+  "Andorra": {
+    "name": "Andorra",
+    "value": "AND",
+    "korNm": "안도라",
+    "status": true
+  },
+  "Angola": {
+    "name": "Angola",
+    "value": "ANG",
+    "korNm": "앙골라",
+    "status": true
+  },
+  "Antiguaand barbuda": {
+    "name": "Antiguaand barbuda",
+    "value": "ANT",
+    "korNm": "앤티과바부다",
+    "status": true
+  },
+  "Argentina": {
+    "name": "Argentina",
+    "value": "ARG",
+    "korNm": "아르헨티나",
+    "status": true
+  },
+  "Armenia": {
+    "name": "Armenia",
+    "value": "ARM",
+    "korNm": "아르메니아",
+    "status": true
+  },
+  "Aruba": {
+    "name": "Aruba",
+    "value": "ARU",
+    "korNm": "아루바",
+    "status": true
+  },
+  "Samoa": {
+    "name": "Samoa",
+    "value": "SAM",
+    "korNm": "사모아",
+    "status": true
+  },
+  "Australia": {
+    "name": "Australia",
+    "value": "AUS",
+    "korNm": "오스트레일리아",
+    "status": true
+  },
+  "Austria": {
+    "name": "Austria",
+    "value": "AUT",
+    "korNm": "오스트리아",
+    "status": true
+  },
+  "Azerbaijan": {
+    "name": "Azerbaijan",
+    "value": "AZE",
+    "korNm": "아제르바이잔",
+    "status": true
+  },
+  "Bahamas": {
+    "name": "Bahamas",
+    "value": "BAH",
+    "korNm": "바하마",
+    "status": true
+  },
+  "Bangladesh": {
+    "name": "Bangladesh",
+    "value": "BAN",
+    "korNm": "방글라데시",
+    "status": true
+  },
+  "Barbados": {
+    "name": "Barbados",
+    "value": "BAR",
+    "korNm": "바베이도즈",
+    "status": true
+  },
+  "Burundi": {
+    "name": "Burundi",
+    "value": "BDI",
+    "korNm": "부룬디",
+    "status": true
+  },
+  "Belgium": {
+    "name": "Belgium",
+    "value": "BEL",
+    "korNm": "벨기에",
+    "status": true
+  },
+  "Benin": {
+    "name": "Benin",
+    "value": "BEN",
+    "korNm": "베넹",
+    "status": true
+  },
+  "Bermuda": {
+    "name": "Bermuda",
+    "value": "BER",
+    "korNm": "버뮤다",
+    "status": true
+  },
+  "Bhutan": {
+    "name": "Bhutan",
+    "value": "BHU",
+    "korNm": "부탄",
+    "status": true
+  },
+  "Bosniaand herzegovina": {
+    "name": "Bosniaand herzegovina",
+    "value": "BIH",
+    "korNm": "보스니아헤르체고비나",
+    "status": true
+  },
+  "Belize": {
+    "name": "Belize",
+    "value": "BIZ",
+    "korNm": "벨리즈",
+    "status": true
+  },
+  "Belarus": {
+    "name": "Belarus",
+    "value": "BLR",
+    "korNm": "벨라루스",
+    "status": true
+  },
+  "Bolivia": {
+    "name": "Bolivia",
+    "value": "BOL",
+    "korNm": "볼리비아",
+    "status": true
+  },
+  "Botswana": {
+    "name": "Botswana",
+    "value": "BOT",
+    "korNm": "보츠와나",
+    "status": true
+  },
+  "Brazil": {
+    "name": "Brazil",
+    "value": "BRA",
+    "korNm": "브라질",
+    "status": true
+  },
+  "Bahrain": {
+    "name": "Bahrain",
+    "value": "BRN",
+    "korNm": "바레인",
+    "status": true
+  },
+  "Brunei": {
+    "name": "Brunei",
+    "value": "BRU",
+    "korNm": "브루나이",
+    "status": true
+  },
+  "Bulgaria": {
+    "name": "Bulgaria",
+    "value": "BUL",
+    "korNm": "불가리아",
+    "status": true
+  },
+  "Burkina faso": {
+    "name": "Burkina faso",
+    "value": "BUR",
+    "korNm": "부르키나파소",
+    "status": true
+  },
+  "Central african republic": {
+    "name": "Central african republic",
+    "value": "CAF",
+    "korNm": "중앙아프리카공화국",
+    "status": true
+  },
+  "Cambodia": {
+    "name": "Cambodia",
+    "value": "CAM",
+    "korNm": "캄보디아",
+    "status": true
+  },
+  "Canada": {
+    "name": "Canada",
+    "value": "CAN",
+    "korNm": "캐나다",
+    "status": true
+  },
+  "Cayman": {
+    "name": "Cayman",
+    "value": "CAY",
+    "korNm": "케이먼 제도",
+    "status": true
+  },
+  "Congo": {
+    "name": "Congo",
+    "value": "CGO",
+    "korNm": "콩고",
+    "status": true
+  },
+  "Chad": {
+    "name": "Chad",
+    "value": "CHA",
+    "korNm": "차드",
+    "status": true
+  },
+  "Chile": {
+    "name": "Chile",
+    "value": "CHI",
+    "korNm": "칠레",
+    "status": true
+  },
+  "China": {
+    "name": "China",
+    "value": "CHN",
+    "korNm": "중국",
+    "status": true
+  },
+  "Cote d ivoire": {
+    "name": "Coted d ivoire",
+    "value": "CIV",
+    "korNm": "코트디부아르",
+    "status": true
+  },
+  "Cameroon": {
+    "name": "Cameroon",
+    "value": "CMR",
+    "korNm": "카메룬",
+    "status": true
+  },
+  "Democratic republic of the congo": {
+    "name": "Democratic republic of the congo",
+    "value": "COD",
+    "korNm": "콩고민주공화국",
+    "status": true
+  },
+  "Cook": {
+    "name": "Cook",
+    "value": "COK",
+    "korNm": "쿡",
+    "status": true
+  },
+  "Colombia": {
+    "name": "Colombia",
+    "value": "COL",
+    "korNm": "콜롬비아",
+    "status": true
+  },
+  "Comoros": {
+    "name": "Comoros",
+    "value": "COM",
+    "korNm": "코모로",
+    "status": true
+  },
+  "Cape verde": {
+    "name": "Cape verde",
+    "value": "CPV",
+    "korNm": "케이프베르데",
+    "status": true
+  },
+  "Costa rica": {
+    "name": "Costa rica",
+    "value": "CRC",
+    "korNm": "코스타리카",
+    "status": true
+  },
+  "Croatia": {
+    "name": "Croatia",
+    "value": "CRO",
+    "korNm": "크로아티아",
+    "status": true
+  },
+  "Cuba": {
+    "name": "Cuba",
+    "value": "CUB",
+    "korNm": "쿠바",
+    "status": true
+  },
+  "Cyprus": {
+    "name": "Cyprus",
+    "value": "CYP",
+    "korNm": "키프러스",
+    "status": true
+  },
+  "Czech": {
+    "name": "Czech",
+    "value": "CZE",
+    "korNm": "체코",
+    "status": true
+  },
+  "Denmark": {
+    "name": "Denmark",
+    "value": "DEN",
+    "korNm": "덴마크",
+    "status": true
+  },
+  "Djibouti": {
+    "name": "Djibouti",
+    "value": "DJI",
+    "korNm": "지부티",
+    "status": true
+  },
+  "Dominica": {
+    "name": "Dominica",
+    "value": "DMA",
+    "korNm": "도미니카 연방",
+    "status": true
+  },
+  "Dominican republic": {
+    "name": "Dominican republic",
+    "value": "DOM",
+    "korNm": "도미니카 공화국",
+    "status": true
+  },
+  "Ecuador": {
+    "name": "Ecuador",
+    "value": "ECU",
+    "korNm": "에콰도르",
+    "status": true
+  },
+  "Egypt": {
+    "name": "Egypt",
+    "value": "EGY",
+    "korNm": "이집트",
+    "status": true
+  },
+  "Eritrea": {
+    "name": "Eritrea",
+    "value": "ERI",
+    "korNm": "에리트레아",
+    "status": true
+  },
+  "Elsalvador": {
+    "name": "Elsalvador",
+    "value": "ESA",
+    "korNm": "엘살바도르",
+    "status": true
+  },
+  "Spain": {
+    "name": "Spain",
+    "value": "ESP",
+    "korNm": "스페인",
+    "status": true
+  },
+  "Estonia": {
+    "name": "Estonia",
+    "value": "EST",
+    "korNm": "에스토니아",
+    "status": true
+  },
+  "Ethiopia": {
+    "name": "Ethiopia",
+    "value": "ETH",
+    "korNm": "에티오피아",
+    "status": true
+  },
+  "Fiji": {
+    "name": "Fiji",
+    "value": "FIJ",
+    "korNm": "피지",
+    "status": true
+  },
+  "Finland": {
+    "name": "Finland",
+    "value": "FIN",
+    "korNm": "핀란드",
+    "status": true
+  },
+  "France": {
+    "name": "France",
+    "value": "FRA",
+    "korNm": "프랑스",
+    "status": true
+  },
+  "Micronesia": {
+    "name": "Micronesia",
+    "value": "FSM",
+    "korNm": "미크로네시아",
+    "status": true
+  },
+  "Gabon": {
+    "name": "Gabon",
+    "value": "GAB",
+    "korNm": "가봉",
+    "status": true
+  },
+  "Gambia": {
+    "name": "Gambia",
+    "value": "GAM",
+    "korNm": "감비아",
+    "status": true
+  },
+  "United kingdom": {
+    "name": "United kingdom",
+    "value": "GBR",
+    "korNm": "영국",
+    "status": true
+  },
+  "Guineabissau": {
+    "name": "Guineabissau",
+    "value": "GBS",
+    "korNm": "기니비사우",
+    "status": true
+  },
+  "Georgia": {
+    "name": "Georgia",
+    "value": "GEO",
+    "korNm": "그루지아",
+    "status": true
+  },
+  "Equatorialguinea": {
+    "name": "Equatorialguinea",
+    "value": "GEQ",
+    "korNm": "적도 기니",
+    "status": true
+  },
+  "Germany": {
+    "name": "Germany",
+    "value": "GER",
+    "korNm": "독일",
+    "status": true
+  },
+  "Ghana": {
+    "name": "Ghana",
+    "value": "GHA",
+    "korNm": "가나",
+    "status": true
+  },
+  "Greece": {
+    "name": "Greece",
+    "value": "GRE",
+    "korNm": "그리스",
+    "status": true
+  },
+  "Grenada": {
+    "name": "Grenada",
+    "value": "GRN",
+    "korNm": "그레나다",
+    "status": true
+  },
+  "Guatemala": {
+    "name": "Guatemala",
+    "value": "GUA",
+    "korNm": "과테말라",
+    "status": true
+  },
+  "Guinea": {
+    "name": "Guinea",
+    "value": "GUI",
+    "korNm": "기니",
+    "status": true
+  },
+  "Guam": {
+    "name": "Guam",
+    "value": "GUM",
+    "korNm": "괌",
+    "status": true
+  },
+  "Guyana": {
+    "name": "Guyana",
+    "value": "GUY",
+    "korNm": "가이아나",
+    "status": true
+  },
+  "Haiti": {
+    "name": "Haiti",
+    "value": "HAI",
+    "korNm": "아이티",
+    "status": true
+  },
+  "Hong Kong": {
+    "name": "Hong Kong",
+    "value": "HKG",
+    "korNm": "홍콩",
+    "status": true
+  },
+  "Honduras": {
+    "name": "Honduras",
+    "value": "HON",
+    "korNm": "온두라스",
+    "status": true
+  },
+  "Hungary": {
+    "name": "Hungary",
+    "value": "HUN",
+    "korNm": "헝가리",
+    "status": true
+  },
+  "Indonesia": {
+    "name": "Indonesia",
+    "value": "IDN",
+    "korNm": "인도네시아",
+    "status": true
+  },
+  "India": {
+    "name": "India",
+    "value": "IND",
+    "korNm": "인도",
+    "status": true
+  },
+  "Iran": {
+    "name": "Iran",
+    "value": "IRI",
+    "korNm": "이란",
+    "status": true
+  },
+  "Ireland": {
+    "name": "Ireland",
+    "value": "IRL",
+    "korNm": "아일랜드",
+    "status": true
+  },
+  "Iraq": {
+    "name": "Iraq",
+    "value": "IRQ",
+    "korNm": "이라크",
+    "status": true
+  },
+  "Iceland": {
+    "name": "Iceland",
+    "value": "ISL",
+    "korNm": "아이슬란드",
+    "status": true
+  },
+  "Israel": {
+    "name": "Israel",
+    "value": "ISR",
+    "korNm": "이스라엘",
+    "status": true
+  },
+  "Virgin(U.S.)": {
+    "name": "Virgin(U.S.)",
+    "value": "ISV",
+    "korNm": "미국령 버진",
+    "status": true
+  },
+  "Italy": {
+    "name": "Italy",
+    "value": "ITA",
+    "korNm": "이탈리아",
+    "status": true
+  },
+  "Virgin(British)": {
+    "name": "Virgin(British)",
+    "value": "IVB",
+    "korNm": "영국령 버진",
+    "status": true
+  },
+  "Jamaica": {
+    "name": "Jamaica",
+    "value": "JAM",
+    "korNm": "자메이카",
+    "status": true
+  },
+  "Jordan": {
+    "name": "Jordan",
+    "value": "JOR",
+    "korNm": "요르단",
+    "status": true
+  },
+  "Japan": {
+    "name": "Japan",
+    "value": "JPN",
+    "korNm": "일본",
+    "status": true
+  },
+  "Kazakhstan": {
+    "name": "Kazakhstan",
+    "value": "KAZ",
+    "korNm": "카자흐스탄",
+    "status": true
+  },
+  "Kenya": {
+    "name": "Kenya",
+    "value": "KEN",
+    "korNm": "케냐",
+    "status": true
+  },
+  "Kyrgyzstan": {
+    "name": "Kyrgyzstan",
+    "value": "KGZ",
+    "korNm": "키르기즈스탄",
+    "status": true
+  },
+  "South Korea": {
+    "name": "South Korea",
+    "value": "KOR",
+    "korNm": "대한민국",
+    "status": true
+  },
+  "Saudi": {
+    "name": "Saudi",
+    "value": "KSA",
+    "korNm": "사우디아라비아",
+    "status": true
+  },
+  "Kuwait": {
+    "name": "Kuwait",
+    "value": "KUW",
+    "korNm": "쿠웨이트",
+    "status": true
+  },
+  "Laos": {
+    "name": "Laos",
+    "value": "LAO",
+    "korNm": "라오스",
+    "status": true
+  },
+  "Latvia": {
+    "name": "Latvia",
+    "value": "LAT",
+    "korNm": "라트비아",
+    "status": true
+  },
+  "Libya": {
+    "name": "Libya",
+    "value": "LBA",
+    "korNm": "리비아",
+    "status": true
+  },
+  "Liberia": {
+    "name": "Liberia",
+    "value": "LBR",
+    "korNm": "라이베리아",
+    "status": true
+  },
+  "St.lucia": {
+    "name": "St.lucia",
+    "value": "LCA",
+    "korNm": "세인트루시아",
+    "status": true
+  },
+  "Lesotho": {
+    "name": "Lesotho",
+    "value": "LES",
+    "korNm": "레소토",
+    "status": true
+  },
+  "Lebanon": {
+    "name": "Lebanon",
+    "value": "LIB",
+    "korNm": "레바논",
+    "status": true
+  },
+  "Liechtenstein": {
+    "name": "Liechtenstein",
+    "value": "LIE",
+    "korNm": "리히텐슈타인",
+    "status": true
+  },
+  "Lithuania": {
+    "name": "Lithuania",
+    "value": "LTU",
+    "korNm": "리투아니아",
+    "status": true
+  },
+  "Luxembourg": {
+    "name": "Luxembourg",
+    "value": "LUX",
+    "korNm": "룩셈부르크",
+    "status": true
+  },
+  "Madagascar": {
+    "name": "Madagascar",
+    "value": "MAD",
+    "korNm": "마다가스카르",
+    "status": true
+  },
+  "Morocco": {
+    "name": "Morocco",
+    "value": "MAR",
+    "korNm": "모로코",
+    "status": true
+  },
+  "Malaysia": {
+    "name": "Malaysia",
+    "value": "MYS",
+    "korNm": "말레이시아",
+    "status": true
+  },
+  "Malawi": {
+    "name": "Malawi",
+    "value": "MAW",
+    "korNm": "말라위",
+    "status": true
+  },
+  "Moldova": {
+    "name": "Moldova",
+    "value": "MDA",
+    "korNm": "몰도바",
+    "status": true
+  },
+  "Maldives": {
+    "name": "Maldives",
+    "value": "MDV",
+    "korNm": "몰디브",
+    "status": true
+  },
+  "Mexico": {
+    "name": "Mexico",
+    "value": "MEX",
+    "korNm": "멕시코",
+    "status": true
+  },
+  "Mongolia": {
+    "name": "Mongolia",
+    "value": "MGL",
+    "korNm": "몽골",
+    "status": true
+  },
+  "Macedonia": {
+    "name": "Macedonia",
+    "value": "MKD",
+    "korNm": "마케도니아",
+    "status": true
+  },
+  "Mali": {
+    "name": "Mali",
+    "value": "MLI",
+    "korNm": "말리",
+    "status": true
+  },
+  "Malta": {
+    "name": "Malta",
+    "value": "MLT",
+    "korNm": "몰타",
+    "status": true
+  },
+  "Monaco": {
+    "name": "Monaco",
+    "value": "MON",
+    "korNm": "모나코",
+    "status": true
+  },
+  "Mozambique": {
+    "name": "Mozambique",
+    "value": "MOZ",
+    "korNm": "모잠비크",
+    "status": true
+  },
+  "Mauritius": {
+    "name": "Mauritius",
+    "value": "MRI",
+    "korNm": "모리셔스",
+    "status": true
+  },
+  "Mauritania": {
+    "name": "Mauritania",
+    "value": "MTN",
+    "korNm": "모리타니아",
+    "status": true
+  },
+  "Myanmar": {
+    "name": "Myanmar",
+    "value": "MYA",
+    "korNm": "미얀마",
+    "status": true
+  },
+  "Namibia": {
+    "name": "Namibia",
+    "value": "NAM",
+    "korNm": "나미비아",
+    "status": true
+  },
+  "Nicaragua": {
+    "name": "Nicaragua",
+    "value": "NCA",
+    "korNm": "니카라과",
+    "status": true
+  },
+  "Netherlands": {
+    "name": "Netherlands",
+    "value": "NED",
+    "korNm": "네덜란드",
+    "status": true
+  },
+  "Netherlands Antilles": {
+    "name": "Netherlands Antilles",
+    "value": "AHO",
+    "korNm": "네덜란드령 안틸레스",
+    "status": true
+  },
+  "Nepal": {
+    "name": "Nepal",
+    "value": "NEP",
+    "korNm": "네팔",
+    "status": true
+  },
+  "Norfolk": {
+    "name": "Norfolk",
+    "value": "NFK",
+    "korNm": "노퍽",
+    "status": true
+  },
+  "Nigeria": {
+    "name": "Nigeria",
+    "value": "NGR",
+    "korNm": "나이지리아",
+    "status": true
+  },
+  "Niger": {
+    "name": "Niger",
+    "value": "NIG",
+    "korNm": "니제르",
+    "status": true
+  },
+  "Norway": {
+    "name": "Norway",
+    "value": "NOR",
+    "korNm": "노르웨이",
+    "status": true
+  },
+  "Nauru": {
+    "name": "Nauru",
+    "value": "NRU",
+    "korNm": "나우루",
+    "status": true
+  },
+  "New zealand": {
+    "name": "New zealand",
+    "value": "NZL",
+    "korNm": "뉴질란드",
+    "status": true
+  },
+  "Oman": {
+    "name": "Oman",
+    "value": "OMA",
+    "korNm": "오만",
+    "status": true
+  },
+  "Pakistan": {
+    "name": "Pakistan",
+    "value": "PAK",
+    "korNm": "파키스탄",
+    "status": true
+  },
+  "Panama": {
+    "name": "Panama",
+    "value": "PAN",
+    "korNm": "파나마",
+    "status": true
+  },
+  "Paraguay": {
+    "name": "Paraguay",
+    "value": "PAR",
+    "korNm": "파라과이",
+    "status": true
+  },
+  "Peru": {
+    "name": "Peru",
+    "value": "PER",
+    "korNm": "페루",
+    "status": true
+  },
+  "Philippines": {
+    "name": "Philippines",
+    "value": "PHL",
+    "korNm": "필리핀",
+    "status": true
+  },
+  "Palestine": {
+    "name": "Palestine",
+    "value": "PLE",
+    "korNm": "팔레스타인",
+    "status": true
+  },
+  "Palau": {
+    "name": "Palau",
+    "value": "PLW",
+    "korNm": "팔라우",
+    "status": true
+  },
+  "Papuanew guinea": {
+    "name": "Papuanew guinea",
+    "value": "PNG",
+    "korNm": "파푸아뉴기니",
+    "status": true
+  },
+  "Poland": {
+    "name": "Poland",
+    "value": "POL",
+    "korNm": "폴란드",
+    "status": true
+  },
+  "Portugal": {
+    "name": "Portugal",
+    "value": "POR",
+    "korNm": "포르투갈",
+    "status": true
+  },
+  "North korea": {
+    "name": "North korea",
+    "value": "PRK",
+    "korNm": "북한",
+    "status": true
+  },
+  "Puerto Rico": {
+    "name": "Puerto Rico",
+    "value": "PUR",
+    "korNm": "푸에르토리코",
+    "status": true
+  },
+  "Qatar": {
+    "name": "Qatar",
+    "value": "QAT",
+    "korNm": "카타르",
+    "status": true
+  },
+  "Romania": {
+    "name": "Romania",
+    "value": "ROM",
+    "korNm": "루마니아",
+    "status": true
+  },
+  "South africa": {
+    "name": "South africa",
+    "value": "RSA",
+    "korNm": "남아프리카공화국",
+    "status": true
+  },
+  "Russia": {
+    "name": "Russia",
+    "value": "RUS",
+    "korNm": "러시아",
+    "status": true
+  },
+  "Rwanda": {
+    "name": "Rwanda",
+    "value": "RWA",
+    "korNm": "르완다",
+    "status": true
+  },
+  "Senegal": {
+    "name": "Senegal",
+    "value": "SEN",
+    "korNm": "세네갈",
+    "status": true
+  },
+  "Seychelles": {
+    "name": "Seychelles",
+    "value": "SEY",
+    "korNm": "세이셸",
+    "status": true
+  },
+  "Singapore": {
+    "name": "Singapore",
+    "value": "SGP",
+    "korNm": "싱가포르",
+    "status": true
+  },
+  "Nevis": {
+    "name": "Nevis",
+    "value": "SKN",
+    "korNm": "세인트 키츠 앤 네비스",
+    "status": true
+  },
+  "Sierra leone": {
+    "name": "Sierra leone",
+    "value": "SLE",
+    "korNm": "시에라리온",
+    "status": true
+  },
+  "Sloveniana": {
+    "name": "Sloveniana",
+    "value": "SLO",
+    "korNm": "슬로베니아",
+    "status": true
+  },
+  "San Marino": {
+    "name": "San Marino",
+    "value": "SMR",
+    "korNm": "산마리노",
+    "status": true
+  },
+  "Solomonlslands": {
+    "name": "Solomonlslands",
+    "value": "SOL",
+    "korNm": "솔로몬",
+    "status": true
+  },
+  "Somalia": {
+    "name": "Somalia",
+    "value": "SOM",
+    "korNm": "소말리아",
+    "status": true
+  },
+  "Sri lanka": {
+    "name": "Sri lanka",
+    "value": "SRI",
+    "korNm": "스리랑카",
+    "status": true
+  },
+  "Sao Tome And Principe": {
+    "name": "Sao Tome And Principe",
+    "value": "STP",
+    "korNm": "상투메프린시페",
+    "status": true
+  },
+  "Sudan": {
+    "name": "Sudan",
+    "value": "SUD",
+    "korNm": "수단",
+    "status": true
+  },
+  "Switzerland": {
+    "name": "Switzerland",
+    "value": "SUI",
+    "korNm": "스위스",
+    "status": true
+  },
+  "Surinam": {
+    "name": "Surinam",
+    "value": "SUR",
+    "korNm": "수리남",
+    "status": true
+  },
+  "Slovakia": {
+    "name": "Slovakia",
+    "value": "SVK",
+    "korNm": "슬로바키아",
+    "status": true
+  },
+  "Sweden": {
+    "name": "Sweden",
+    "value": "SWE",
+    "korNm": "스웨덴",
+    "status": true
+  },
+  "Swaziland": {
+    "name": "Swaziland",
+    "value": "SWZ",
+    "korNm": "스와질랜드",
+    "status": true
+  },
+  "Syria": {
+    "name": "Syria",
+    "value": "SYR",
+    "korNm": "시리아",
+    "status": true
+  },
+  "Tanzania": {
+    "name": "Tanzania",
+    "value": "TAN",
+    "korNm": "탄자니아",
+    "status": true
+  },
+  "Tonga": {
+    "name": "Tonga",
+    "value": "TGA",
+    "korNm": "통가",
+    "status": true
+  },
+  "Thailand": {
+    "name": "Thailand",
+    "value": "THA",
+    "korNm": "타이",
+    "status": true
+  },
+  "Tadzhikistan": {
+    "name": "Tadzhikistan",
+    "value": "TJK",
+    "korNm": "타지키스탄",
+    "status": true
+  },
+  "Turkmenistan": {
+    "name": "Turkmenistan",
+    "value": "TKM",
+    "korNm": "투르크메니스탄",
+    "status": true
+  },
+  "Togo": {
+    "name": "Togo",
+    "value": "TOG",
+    "korNm": "토고",
+    "status": true
+  },
+  "Taiwan": {
+    "name": "Taiwan",
+    "value": "TPE",
+    "korNm": "대만",
+    "status": true
+  },
+  "Trinidad And Tobago": {
+    "name": "Trinidad And Tobago",
+    "value": "TRI",
+    "korNm": "트리니다드 토바고",
+    "status": true
+  },
+  "Tunisia": {
+    "name": "Tunisia",
+    "value": "TUN",
+    "korNm": "튀니지",
+    "status": true
+  },
+  "Turkey": {
+    "name": "Turkey",
+    "value": "TUR",
+    "korNm": "터키",
+    "status": true
+  },
+  "United arab emirates": {
+    "name": "United arab emirates",
+    "value": "UAE",
+    "korNm": "아랍에미레이트",
+    "status": true
+  },
+  "Uganda": {
+    "name": "Uganda",
+    "value": "UGA",
+    "korNm": "우간다",
+    "status": true
+  },
+  "Ukraine": {
+    "name": "Ukraine",
+    "value": "UKR",
+    "korNm": "우크라이나",
+    "status": true
+  },
+  "Uruguay": {
+    "name": "Uruguay",
+    "value": "URU",
+    "korNm": "우루과이",
+    "status": true
+  },
+  "United states": {
+    "name": "United states",
+    "value": "USA",
+    "korNm": "미국",
+    "status": true
+  },
+  "Uzbekistan": {
+    "name": "Uzbekistan",
+    "value": "UZB",
+    "korNm": "우즈베키스탄",
+    "status": true
+  },
+  "Vanuatu": {
+    "name": "Vanuatu",
+    "value": "VAN",
+    "korNm": "바누아투",
+    "status": true
+  },
+  "Venezuela": {
+    "name": "Venezuela",
+    "value": "VEN",
+    "korNm": "베네주엘라",
+    "status": true
+  },
+  "Viet nam": {
+    "name": "Viet nam",
+    "value": "VNM",
+    "korNm": "베트남",
+    "status": true
+  },
+  "Saint Vincent And The Grenadines": {
+    "name": "Saint Vincent And The Grenadines",
+    "value": "VIN",
+    "korNm": "세인트빈센트그레나딘",
+    "status": true
+  },
+  "Yemen": {
+    "name": "Yemen",
+    "value": "YEM",
+    "korNm": "예멘",
+    "status": true
+  },
+  "Yugoslavia": {
+    "name": "Yugoslavia",
+    "value": "YUG",
+    "korNm": "유고슬라비아",
+    "status": true
+  },
+  "Zambia": {
+    "name": "Zambia",
+    "value": "ZAM",
+    "korNm": "잠비아",
+    "status": true
+  },
+  "Zimbabwe": {
+    "name": "Zimbabwe",
+    "value": "ZIM",
+    "korNm": "짐바브웨",
+    "status": true
+  }
+}

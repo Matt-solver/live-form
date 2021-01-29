@@ -1,0 +1,253 @@
+
+.card-1 > div {
+  padding:0!important
+}
+.v-select__selection--comma {
+  font-size: 0.7rem;
+}
+.v-list--dense .v-list-item .v-list-item__subtitle {
+  font-size: 0.3rem !important;
+}
+/* .v-list-item{  
+  margin-top: 0px !important;
+  background: #fff !important;
+} */
+.v-menu__content {
+  z-index: 300;
+}
+.bv-example-row {
+  height: 90%;
+}
+.blur-1 {
+  filter: blur(15px);
+}
+.scroll-container {
+  scroll-behavior: smooth;
+  display: block;
+  text-align: center;
+  margin: auto;
+  overflow-y: auto;
+  height: 100vh;
+}
+.card-body,
+.card-header {
+  background-color: #fff !important;
+}
+
+
+
+.z-index-1 {
+  z-index: 100;
+}
+.z-index-2 {
+  z-index: 200;
+}
+.z-index-3 {
+  z-index: 300;
+}
+.z-index-4 {
+  z-index: 400;
+}
+.z-index-5 {
+  z-index: 500;
+}
+/*Filter styles*/
+.saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.opacity { filter: opacity(20%); }
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.limit-width {
+  max-width: 600px;
+}
+#bar {
+  width: 100vw;
+  display: none;
+}
+.translucent {
+  opacity: 0.5;
+}
+.off {
+  display: none;
+}
+.transparent {
+  opacity: 0;
+}
+.left {
+  text-align: left;
+}
+.wide {
+  width: 100%;
+}
+.fill-height {
+  height: 100%;
+}
+.absolute {
+  position: absolute;
+}
+.center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.blur {
+  filter: blur(0.3px);
+}
+
+.bolder {
+  font-weight: bolder;
+}
+.bold {
+  font-weight: bold;
+}
+.overflow {
+  overflow: auto
+}
+.overflow-h {
+  overflow: hidden
+}
+/* .ellipsis{
+  overflow:hidden;
+  text-overflow:ellipsis;
+} */
+.mirror {
+  transform: scale(-1, 1);
+}
+
+/* graphic Effict */
+.fadeout {
+  animation: fadeout 0.5s forwards;
+  -moz-animation: fadeout 0.5s forwards; /* Firefox */
+  -webkit-animation: fadeout 0.5s forwards; /* Safari and Chrome */
+  -o-animation: fadeout 0.5s forwards; /* Opera */
+}
+.fadein {
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+}
+.fadein--slower {
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadein {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes ani {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slideup {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}
+.slide-up {
+  animation: slideup 0.3s ease-in-out;
+}
+.shake {
+  animation-name: shake;
+  animation-duration: 0.3s;
+  animation-iteration-count: 15;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0.8px, 0.8px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-0.8px, -0.8px) rotate(0.8deg);
+  }
+  20% {
+    transform: translate(-1px, 0.8px) rotate(-0.8deg);
+  }
+  30% {
+    transform: translate(0.8px, 0.8px) rotate(0deg);
+  }
+  40% {
+    transform: translate(-0.8px, 0.8px) rotate(0.8deg);
+  }
+  50% {
+    transform: translate(0.8px, -0.8px) rotate(-0.8deg);
+  }
+  60% {
+    transform: translate(0.8px, 0.8px) rotate(0.8deg);
+  }
+  70% {
+    transform: translate(-0.8px, 0.8px) rotate(0.8deg);
+  }
+  80% {
+    transform: translate(0.8px, -0.8px) rotate(0.8deg);
+  }
+  90% {
+    transform: translate(-0.8px, 0.8px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0.8px, 0.8px) rotate(-0.8deg);
+  }
+}
