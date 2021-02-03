@@ -33,7 +33,7 @@ export const Step1_select_issue_country = {
         console.log("%c" + "🔥🔥🔥🔥🔥 STEP 1 Select Issuing country 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
 
         let self = this;
-        comm.inspectSession(self);
+        // comm.inspectSession(self);
         this.onUserCountry();
 
         // 가로화면 세팅

@@ -32,7 +32,7 @@ export const Proof_of_address = {
   created: function() {},
   async mounted() {
     console.log("%c"+"🔥🔥🔥🔥🔥 Proof of address 🔥🔥🔥🔥🔥", "color:green;font-weight:bold;");
-    comm.inspectSession(this);
+    // comm.inspectSession(this);
     // 가로화면 세팅
     this.orientation = window.orientation;
     // document.onclick = function() {

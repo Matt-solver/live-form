@@ -457,6 +457,7 @@ exports.getCustomizationOptions = functions
                                 return res;
                             }
                         } else {
+                            console.log(">>> response", response)
                             if (!response.data) return "No response data";
                             else throw new Error("An occurred Error. ", response.status);
                         }

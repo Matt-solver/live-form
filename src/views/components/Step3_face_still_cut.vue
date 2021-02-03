@@ -26,19 +26,11 @@
       ref="photo_area"
       class="photo_area face fadein"
     >
-      <input
-        v-show="uiflag.localCam"
-        type="file"
-        ref="localCam"
-        :class="classes.localCam"
-        capture="camera"
-        accept="image/*"
-      />
       <img
         v-show="uiflag.sample"
         ref="sample"
         class="sample"
-        src="../../img/face_img.png"
+        src="@/assets/static/img/Selfie_Guide.png"
         alt="passport"
       />
       <img
@@ -64,15 +56,30 @@
         ref="faceCanvas"
         class="z-index-1"
       ></canvas>
-      <!-- <p v-if="Issue_country_name && Issue_country_code">
-          {{Issue_country_name.replace('_', ' ')}}, {{Issue_country_code}}
-      </p> -->
+      
+      <v-row v-show="$store.state.is_iOS && uiflag.localCamBtn" justify="center">
+        <label 
+          class="file-up mt-5" 
+          for="localCam"
+        >{{ $t("message.common-1") }}
+        </label>      
+        <input
+          id="localCam"
+          type="file"
+          ref="localCam"
+          class="localCam"
+          capture="camera"
+          accept="image/*"
+          hidden
+        />
+      </v-row>
     </div>
     <div v-show="uiflag.photo_box" ref="photo_box" class="photo_box fadein">
-      <p class="mb-5">
-        {{ $t("message.step3-6") }} <span>{{ $t("message.step3-7") }}</span>
-        {{ $t("message.step3-8") }}
-      </p>
+      <div>
+        <p class="mb-5">
+          <span>{{ $t("message.step3-6") }}</span>{{ $t("message.step3-7") }}
+        </p>
+      </div>
       <a v-show="uiflag.shot_btn" ref="shot_btn" class="capture-btn" @click="next_step"
         ><img
           ref="shotBtn"

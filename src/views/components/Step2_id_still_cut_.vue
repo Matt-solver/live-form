@@ -20,6 +20,7 @@
         <p class="my-0">{{ $t("message.step2-3") }}</p>
       </div>
     </div>
+
     <h1 v-show="loading" class="sumit_box fadein z-index-4">
       <img src="../../img/loader.gif" alt="sumit" />
     </h1>
@@ -27,16 +28,16 @@
       v-show="uiflag.photo_area"
       ref="photo_area"
       class="photo_area fadein"
-      style="text-align:center"
+      style="text-align: center"
     >
-      <input
-        v-show="uiflag.localCam"
-        type="file"
-        ref="localCam"
-        class="localCam pa-0 absolute transparent limit-width z-index-5"
-        capture="camera"
-        accept="image/*"
-      />
+      <!-- Glare detecter -->
+      <div
+        v-show="flash"
+        cols="6"
+        class="flash secondary fadein white--text absolute z-index-4"
+      >
+        {{ $t("message.step2-4") }}
+      </div>
       <img
         v-show="uiflag.sample"
         ref="sample"
@@ -67,21 +68,22 @@
         style="border:0;"
       ></canvas> -->
 
-    <!-- Edge Layer -->
-    <div v-show="uiflag.edgeLayer" ref="edgeLayer" class="edge-layer">
-      <div class="edge-wrap inline-block left">
-        <div id="edge1" class="edge"></div>
-      </div>      
-      <div class="edge-wrap deg270 absolute left bottom">
-        <div id="edge3" class="edge"></div>
-      </div> 
-      <div class="edge-wrap deg90 right">
-        <div id="edge2" class="edge"></div>
-      </div>      
-      <div class="edge-wrap deg180 absolute right bottom">
-        <div id="edge4" class="edge"></div>
-      </div> 
-    </div>  
+      <!-- Edge Layer -->
+      <div v-show="uiflag.edgeLayer" ref="edgeLayer" class="edge-layer">
+        <div class="edge-wrap inline-block left">
+          <div id="edge1" class="edge"></div>
+        </div>
+        <div class="edge-wrap deg270 absolute left bottom">
+          <div id="edge3" class="edge"></div>
+        </div>
+        <div class="edge-wrap deg90 right">
+          <div id="edge2" class="edge"></div>
+        </div>
+        <div class="edge-wrap deg180 absolute right bottom">
+          <div id="edge4" class="edge"></div>
+        </div>
+      </div>
+
       <video
         v-show="uiflag.video"
         id="video"
@@ -96,23 +98,27 @@
         id="c1"
         ref="canvas"
         class="fadein z-index-1"
-      ></canvas>  
+      ></canvas>
+
       <p v-if="Issue_country_name && Issue_country_code">
         {{ Issue_country_name.replace("_", " ") }}, {{ Issue_country_code }}
       </p>
-
       <v-row
-        v-if="flash"
-        class="mt-10 z-index-4"
-        align="center"
+        v-show="$store.state.is_iOS && uiflag.localCamBtn"
         justify="center"
       >
-        <v-col
-          cols="12"
-          class="absolute secondary fadein white--text"
-          style="width:70%;border-radius:5px;"
-          >{{ $t("message.step2-4") }}</v-col
-        >
+        <label class="file-up mt-5" for="localCam"
+          >{{ $t("message.common-1") }}
+        </label>
+        <input
+          id="localCam"
+          type="file"
+          ref="localCam"
+          class="localCam"
+          capture="camera"
+          accept="image/*"
+          hidden
+        />
       </v-row>
     </div>
     <div
@@ -215,7 +221,7 @@ export default {
 }
 .left {
   float: left;
-  left:0
+  left: 0;
 }
 .bottom {
   bottom: 0;

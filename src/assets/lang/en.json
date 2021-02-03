@@ -1,4 +1,5 @@
 {
+  "common-1": "Click Here",
   "start" : "Start KYC",
   "type1": "Passport",
   "type2": "Driver's License",
@@ -20,12 +21,10 @@
   "step0-15": "Expired session",
   "step0-16": "Wrong user request",
   "step0-17": "Session does not exist",
-
   "step0-18": "Terms of Service",
   "step0-19": "Privacy Policy",
   "step0-20": "Agree",
   "step0-21": "Disagree",
-
   "step1-1": "Sorry, we don't accept KYC submissions from blacklisted countries.",
   "step1-2": "Country: ",
   "step1-3": "Select ID document issuing Country",
@@ -41,11 +40,9 @@
   "step2-9": "Position",
   "step2-10": "",
   "step2-11": "of your ID in the frame",
-
   "step2-12": "Take a picture",
   "step2-13": "of ID Documents",
   "step2-14": "as a Full Frame of Phone",
-
   "step3-1": "Face verification",
   "step3-2": "No face was detected.",
   "step3-2-a": "Your face does not match with the ID document.",
@@ -53,8 +50,10 @@
   "step3-3": "Please try again.",
   "step3-4": "OK",
   "step3-5": "Success!",
-  "step3-6": "Position your ",
-  "step3-7": "face",
+
+  "step3-6": "Take a picture ",
+  "step3-7": "of your selfie",
+
   "step3-8": "in the frame",
   "step4-1": "Processing KYC ···",
   "step5-1": "Thank you.",

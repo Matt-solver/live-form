@@ -24,7 +24,7 @@ export const Step5_result = {
     console.log("%c"+"🔥🔥🔥🔥🔥 STEP 5 Result 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
 
     let self = this;
-    comm.inspectSession(self);
+    // comm.inspectSession(self);
 
     // 가로화면 세팅
     self.orientation = window.orientation;

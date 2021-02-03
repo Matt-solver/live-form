@@ -87,6 +87,7 @@ export const Step2_id_still_cut_ = {
                 capture: false,
             },
             uiflag: {
+                localCamBtn: true,
                 photo_area: false,
                 edgeLayer: false,
                 video: false,
@@ -101,7 +102,7 @@ export const Step2_id_still_cut_ = {
                 canvas: false,
             },
             queryImage: false,
-            license_img: require("@/assets/static/img/license_img.png"),
+            license_img: require("@/assets/static/img/ID_Guide.png"),
 
             timeout: "",
 
@@ -126,7 +127,7 @@ export const Step2_id_still_cut_ = {
             "color:blue;font-weight:bold;"
         );
         this.sideOfId = this.$t("message.step2-7");
-        comm.inspectSession(this);
+        // comm.inspectSession(this);
 
         // 가로화면 세팅
         this.orientation = window.orientation;
@@ -143,6 +144,7 @@ export const Step2_id_still_cut_ = {
         if (this.$store.state.is_iOS) {
             this.uiflag.sample = true;
             this.uiflag.shot_btn = false;
+            this.$refs.photo_box.style.paddingBottom = "120px"
         } else if (this.$store.state.ver === "automatic") {
             this.uiflag.sample = false;
             this.uiflag.shot_btn = true;
@@ -183,8 +185,8 @@ export const Step2_id_still_cut_ = {
         }
         this.video.width = this.width_id;
         this.video.height = this.height_id;
-        this.$refs.localCam.style.width = this.width_id + "px";
-        this.$refs.localCam.style.height = this.height_id + "px";
+        // this.$refs.localCam.style.width = this.width_id + "px";
+        // this.$refs.localCam.style.height = this.height_id + "px";
 
         if (this.$store.state.ver === "automatic" && !this.$store.state.is_iOS) {
             this.uiflag.edgeLayer = true;
@@ -379,7 +381,8 @@ export const Step2_id_still_cut_ = {
                 console.log("Go Backside");
                 if (this.$store.state.is_iOS) {
                     this.$refs.queryImage.classList.add("off");
-                    this.$refs.localCam.style.height = this.height_id + "px";
+                    // this.$refs.localCam.style.height = this.height_id + "px";
+                    this.license_img = require("@/assets/static/img/ID_BACK.png");
                 }
                 this.sideOfId = this.$t("message.step2-8");
                 this.retry(true);
@@ -473,8 +476,8 @@ export const Step2_id_still_cut_ = {
                     self.hasFrontImg === false &&
                     self.hasBackImg === false
                 )
-                    self.$refs.localCam.style.height =
-                    self.$refs.queryImage.offsetWidth + "px";
+                // self.$refs.localCam.style.height =
+                // self.$refs.queryImage.offsetWidth + "px";
 
                 self.uiflag.canvas = true;
             } else {
@@ -507,6 +510,7 @@ export const Step2_id_still_cut_ = {
             self.resIdentityDocumentDetect = false;
             self.$store.state.isIdentityDocument = false;
             self.btn_flag = false;
+            self.uiflag.localCamBtn = true;
 
             if (!self.$store.state.is_iOS) {
                 this.offButton();

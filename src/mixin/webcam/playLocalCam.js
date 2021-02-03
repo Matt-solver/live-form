@@ -63,8 +63,10 @@ export function playLocalCam(self) {
         readImage.then(function(result) {
           console.log("✔️playLocalCam_id: success");
           self.image = result;
-          self.$refs.localCam.style.width = canvas.width + "px";
-          self.$refs.localCam.style.height = canvas.height + "px";
+          self.uiflag.canvas = true;
+          self.uiflag.localCamBtn = false;
+          // self.$refs.localCam.style.width = canvas.width + "px";
+          // self.$refs.localCam.style.height = canvas.height + "px";
 
           self.capture();
         });
@@ -77,10 +79,9 @@ export function playLocalCam(self) {
     let canvas = self.$refs.faceCanvas;
     self.$store.state.isFace = false;
 
-    self.onLocalcam()
-    
-    self.$refs.localCam.style.width = self.width_and_height_face + "px";
-    self.$refs.localCam.style.height = self.width_and_height_face + "px";
+    self.onLocalcam()    
+    // self.$refs.localCam.style.width = self.width_and_height_face + "px";
+    // self.$refs.localCam.style.height = self.width_and_height_face + "px";
     console.log("Connected with iOS.");
 
     if (!("url" in window) && "webkitURL" in window) {
@@ -99,13 +100,16 @@ export function playLocalCam(self) {
       if (canvas.getContext) {
         let img = new Image();
         img.src = URL.createObjectURL(file.target.files[0]);
-        const image = await faceapi.bufferToImage(file.target.files[0]);
-        const c2 = faceapi.createCanvasFromMedia(image);
-        const displaySize = {
-          width: self.width_and_height_face,
-          height: self.width_and_height_face,
-        };
-        faceapi.matchDimensions(c2, displaySize);
+
+        if(ver === "automatic") {
+          const image = await faceapi.bufferToImage(file.target.files[0]);
+          const c2 = faceapi.createCanvasFromMedia(image);
+          const displaySize = {
+            width: self.width_and_height_face,
+            height: self.width_and_height_face,
+          };
+          faceapi.matchDimensions(c2, displaySize);
+        }
 
         let readImage = new Promise(function(resolve) {
           img.onload = function() {
@@ -137,8 +141,9 @@ export function playLocalCam(self) {
           self.image = result;
           self.uiflag.focus = false;
           self.uiflag.canvas = true;
-          self.$refs.localCam.style.width = canvas.width + "px";
-          self.$refs.localCam.style.height = canvas.height + "px";
+          self.uiflag.localCamBtn = false;
+          // self.$refs.localCam.style.width = canvas.width + "px";
+          // self.$refs.localCam.style.height = canvas.height + "px";
 
           self.$store.state.isFace = true;
           if (ver === "automatic") {

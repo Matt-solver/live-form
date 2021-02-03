@@ -13,16 +13,16 @@ module.exports = {
       return true;
     }
   },
-  inspectSession: function(self) {
-    console.log("☑️inspectSession")
-    //inspect session
-    if (self.$session.get("_projectId") && self.$session.get("_email")) {
-      return true;
-    } else {
-      self.$router.push({ name: "ErrorPage", params: { errorType: 404 } });
-      return false;
-    }
-  },
+  // inspectSession: function(self) {
+  //   console.log("☑️inspectSession")
+  //   //inspect session
+  //   if (self.$session.get("_projectId") && self.$session.get("_email")) {
+  //     return true;
+  //   } else {
+  //     self.$router.push({ name: "ErrorPage", params: { errorType: 404 } });
+  //     return false;
+  //   }
+  // },
   // apply_theme_dark: function(){
   //     document.querySelector('.v-main__wrap').style.background = '#20252b';
   //     document.querySelector('html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button').style.background = '#fff';
@@ -101,6 +101,7 @@ module.exports = {
     const labels = [
       "iphone",
       "ipad",
+      "mac",
       "android",
       "pixel",
       "webos",

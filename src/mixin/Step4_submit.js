@@ -27,7 +27,7 @@ export const Step4_submit = {
     console.log("%c"+"🔥🔥🔥🔥🔥 STEP 4 프로세싱 단계 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
 
     let self = this;
-    comm.inspectSession(self);
+    // comm.inspectSession(self);
 
     // 가로화면 세팅
     self.orientation = window.orientation;

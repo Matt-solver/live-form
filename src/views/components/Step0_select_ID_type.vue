@@ -164,80 +164,6 @@
             </div>
           </b-card>
         </div>
-
-        <!-- 📃 Service Documents -->
-        <div id="terms" style="height: 100%">
-          <b-card
-            class="card-2"
-            :header="$t('message.step0-18')"
-            header-tag="header"
-          >
-            <agreement-doc>
-              <template v-slot:terms>
-                <terms-of-service></terms-of-service>
-              </template>
-              <template v-slot:button>
-                <b-col cols="6" align="center">
-                  <b-button
-                    pill
-                    class="grey lighten-2 w-100 text--disabled text-truncate"
-                    @click="disagree"
-                    >{{ $t("message.step0-21") }}</b-button
-                  >
-                </b-col>
-                <b-col cols="6" align="center">
-                  <b-button
-                    pill
-                    variant="primary"
-                    class="w-100 text-truncate"
-                    ><b-checkbox v-model="agreePersonal"
-                      ><span class="white--text">{{
-                        $t("message.step0-20")
-                      }}</span></b-checkbox
-                    ></b-button
-                  >
-                </b-col>
-              </template>
-            </agreement-doc>
-          </b-card>
-        </div>
-        <div id="policy" style="height: 100%">
-          <b-card
-            class="card-3"
-            :header="$t('message.step0-19')"
-            header-tag="header"
-          >
-            <agreement-doc>
-              <template v-slot:policy>
-                <privacy-policy></privacy-policy>
-              </template>
-              <template v-slot:button>
-                <b-col cols="6" align="center">
-                  <b-button
-                    pill
-                    variant="secondary"
-                    class="grey lighten-2 w-100 text--disabled text-truncate"
-                    @click="disagree"
-                    >{{ $t("message.step0-21") }}</b-button
-                  >
-                </b-col>
-                <b-col cols="6" align="center">
-                  <b-button
-                    pill
-                    variant="primary"
-                    class="w-100 text-truncate"
-                  >
-                    <b-checkbox v-model="agreePolicy"
-                      ><span class="white--text">{{
-                        $t("message.step0-20")
-                      }}</span></b-checkbox
-                    ></b-button
-                  >
-                </b-col>
-              </template>
-            </agreement-doc>
-          </b-card>
-        </div>
       </div>
     </b-card-group>
   </div>
@@ -246,18 +172,12 @@
 <script>
 import { Step0_select_ID_type } from "@/mixin/Step0_select_ID_type";
 import AlertPopup from "./childComponent/AlertPopup";
-import agreementDoc from "./childComponent/agreementDoc";
-import termsOfService from "./childComponent/docs/terms";
-import privacyPolicy from "./childComponent/docs/policy";
 
 export default {
   name: "Step0",
   mixins: [Step0_select_ID_type],
   components: {
     AlertPopup,
-    agreementDoc,
-    termsOfService,
-    privacyPolicy,
   },
 };
 </script>

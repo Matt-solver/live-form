@@ -283,7 +283,7 @@ export const Step0_select_ID_type = {
             window.location.href = "#home";
         },
         setScreenHeight() {
-            let card = [".card-1", ".card-2", ".card-3"];
+            let card = [".card-1"];
             for (let c of card) {
                 if (window.orientation === 0)
                     document.querySelector(c).style.height = window.innerHeight + "px";

@@ -34,6 +34,7 @@ export const Step3_face_still_cut = {
         capture:false,
       },
       uiflag:{
+        localCamBtn: true,
         photo_area:false,
         video:false,
         success: false,
