@@ -9,7 +9,7 @@ export function autoCapture(self) {
 
   let classifier = null;
 
-  let realWidth = self.width_1280;
+  let realWidth = self.width_1024;
   let realHeight = realWidth * self.ID_type_Rate;
   let iOS = self.$store.state.is_iOS;
   if (iOS === false) 
@@ -71,8 +71,9 @@ export function autoCapture(self) {
       console.log(error);
     }
   }
-  function gotResult(err, results) {   
+  function gotResult(err, results) {    
     let edge = ['#edge1','#edge2','#edge3','#edge4']
+    
     for(let e of edge){
       if(document.querySelector(e))
         document.querySelector(e).classList.remove('shake')

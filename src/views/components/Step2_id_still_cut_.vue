@@ -53,13 +53,6 @@
         alt="passport"
       />
       <!-- Boundary box -->
-      <!-- Face matching target -->
-      <img
-        v-show="queryImage"
-        ref="queryImage"
-        class="queryImage fadein"
-        :src="image"
-      />
       <!--// Face matching target -->
       <!-- <canvas
         id="c2"
@@ -94,32 +87,21 @@
         playsinline
       />
       <canvas
-        v-show="uiflag.canvas"
         id="c1"
         ref="canvas"
-        class="fadein z-index-1"
+        class="fadein z-index-1 off"
       ></canvas>
+      <!-- Face matching target -->
+      <img
+        v-show="uiflag.thumbnail"
+        ref="queryImage"
+        class="queryImage fadein"
+        :src="image"
+      />
 
       <p v-if="Issue_country_name && Issue_country_code">
         {{ Issue_country_name.replace("_", " ") }}, {{ Issue_country_code }}
       </p>
-      <v-row
-        v-show="$store.state.is_iOS && uiflag.localCamBtn"
-        justify="center"
-      >
-        <label class="file-up mt-5" for="localCam"
-          >{{ $t("message.common-1") }}
-        </label>
-        <input
-          id="localCam"
-          type="file"
-          ref="localCam"
-          class="localCam"
-          capture="camera"
-          accept="image/*"
-          hidden
-        />
-      </v-row>
     </div>
     <div
       v-show="uiflag.photo_box"
@@ -145,6 +127,25 @@
         </p>
         <p class="mb-5">{{ this.$t("message.step2-14") }}</p>
       </div>
+      
+      <v-row
+        v-show="$store.state.is_iOS && uiflag.localCamBtn"
+        justify="center"
+      >
+        <label class="file-up mt-5" for="localCam"
+          >{{ $t("message.common-1") }}
+        </label>
+        <input
+          id="localCam"
+          type="file"
+          ref="localCam"
+          class="localCam"
+          capture="camera"
+          accept="image/*"
+          hidden
+        />
+      </v-row>
+
       <a
         v-show="uiflag.shot_btn"
         ref="shot_btn"

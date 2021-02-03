@@ -20,7 +20,7 @@ export function timerCallback(self) {
 function computeFrame(self) {
   let w = self.width_id;
   let h = self.height_id;
-  let realWidth = self.width_1280;
+  let realWidth = self.width_1024;
   //Exclude Video frame Latency
   self.runVideo = true;
   self.photo_area = true;

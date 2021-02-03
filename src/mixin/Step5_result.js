@@ -17,11 +17,11 @@ export const Step5_result = {
       resizeFlag: 'vertical',
     };
   },
-  create: function() {
+  create: function () {
     this.failcnt = this.$session.get("_failCnt");
   },
   async mounted() {
-    console.log("%c"+"🔥🔥🔥🔥🔥 STEP 5 Result 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
+    console.log("%c" + "🔥🔥🔥🔥🔥 STEP 5 Result 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
 
     let self = this;
     // comm.inspectSession(self);
@@ -34,7 +34,8 @@ export const Step5_result = {
 
     // 연결링크
     let connectionLink = this.$store.getters["optionStore/GET_CONNECTION_LINK"];
-    if (connectionLink) {
+    console.log("✔️connectionLink", connectionLink)
+    if (connectionLink && connectionLink.length > 5 && connectionLink !== "-") {
       self.linkFlag = true;
       self.linkAddr = connectionLink;
     }
@@ -85,7 +86,7 @@ export const Step5_result = {
     // } else { this.errorHandler() }
   },
   watch: {
-    orientation: function() {
+    orientation: function () {
       switch (window.orientation) {
         case 0:
           comm.viewportZoomset(1.0, 1.0, 1.0);
@@ -95,12 +96,12 @@ export const Step5_result = {
           break;
       }
     },
-    resizeFlag: function() {
+    resizeFlag: function () {
       console.log("✔️resizeFlag")
-      if(this.resizeFlag === 'horizontal'){
+      if (this.resizeFlag === 'horizontal') {
         console.log('가로모드 실행')
         this.orientation = window.orientation;
-      }else{
+      } else {
         console.log('세로모드 실행')
         this.orientation = window.orientation;
       }
@@ -110,21 +111,20 @@ export const Step5_result = {
     onResize() {
       let x = window.innerWidth;
       let y = window.innerHeight;
-      if(x>y){
+      if (x > y) {
         this.resizeFlag = 'horizontal'
       } else {
         this.resizeFlag = 'vertical'
       }
     },
-    go_Linked_page: function() {
+    go_Linked_page: function () {
       window.location.href = this.linkAddr;
     },
-    goHome: function() {
+    goHome: function () {
       this.$router.push(
         `/main?pid=${this.$session.get("_projectId")}&email=${this.$session.get(
           "_email"
-        )}&theme=${
-          this.$store.state.isDark
+        )}&theme=${this.$store.state.isDark
         }&apiKey=${comm.get_localStorage_with_expiry(
           "_apiKey"
         )}&oobCode=${comm.get_localStorage_with_expiry("_oobCode")}&mode=signIn`
@@ -146,12 +146,12 @@ export const Step5_result = {
     //   }else{ return false }
 
     // },
-    dataClear: function() {
+    dataClear: function () {
       console.log("✔️dataClear")
       this.$session.destroy();
       this.$store.replaceState({});
     },
-    errorHandler: function() {
+    errorHandler: function () {
       let self = this;
       self.error = true;
       self.resultText1 = this.$t("message.step5-5");

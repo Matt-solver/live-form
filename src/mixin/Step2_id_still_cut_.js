@@ -56,6 +56,7 @@ export const Step2_id_still_cut_ = {
             flash: false,
             //--canvas
             width_1280: 1280,
+            width_1024: 1024,
             c1: null,
             c2: null,
             ctx: null,
@@ -100,6 +101,7 @@ export const Step2_id_still_cut_ = {
                 retry_btn: false,
                 shot_btn: false,
                 canvas: false,
+                thumbnail: false,
             },
             queryImage: false,
             license_img: require("@/assets/static/img/ID_Guide.png"),
@@ -479,14 +481,14 @@ export const Step2_id_still_cut_ = {
                 // self.$refs.localCam.style.height =
                 // self.$refs.queryImage.offsetWidth + "px";
 
-                self.uiflag.canvas = true;
+                self.uiflag.thumbnail = true;
             } else {
                 self.video.pause();
                 this.onvideo = false;
 
                 this.uiflag.video = false; //비디오 숨김
                 self.uiflag.next_btn = true;
-                self.uiflag.canvas = true;
+                self.uiflag.thumbnail = true;
             }
 
             let successWrap = self.$refs.successed_wrap;
@@ -504,9 +506,10 @@ export const Step2_id_still_cut_ = {
             clearTimeout(this.t2);
             clearTimeout(this.t3);
         },
-        retry: function(clear_temp_image) {
+        retry: async function(clear_temp_image) {
             console.log("✔️retry");
             let self = this;
+            this.$store.state.is_iOS || (await this.playWebcam(this, "id"));
             self.resIdentityDocumentDetect = false;
             self.$store.state.isIdentityDocument = false;
             self.btn_flag = false;
@@ -530,7 +533,7 @@ export const Step2_id_still_cut_ = {
                 this.uiflag.photo_box = true;
             }
 
-            self.uiflag.canvas = false;
+            self.uiflag.thumbnail = false;
 
             self.uiflag.next_btn = false;
             self.uiflag.retry_btn = false;

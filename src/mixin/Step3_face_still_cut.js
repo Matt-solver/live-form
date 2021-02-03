@@ -44,11 +44,13 @@ export const Step3_face_still_cut = {
         next_btn: false,
         shot_btn: false,
         canvas: false,
+        thumbnail: false,
         focus: true,
       },
       browser: null,
       //canvas
       width_1280: 1280,
+      width_1024: 1024,
       ID_type_Rate: null,
       faceCanvas: null,
       ctx: null,
@@ -265,7 +267,6 @@ export const Step3_face_still_cut = {
           self.loading = true;
           // 제출 버튼 클릭시 버튼 비활성화
           if (self.$refs.shot_btn) self.$refs.shot_btn.disabled = true;
-
           //add only face image in the ds_params object
           console.log(":::::::::::::::: Dataset ::::::::::::::::");
           let params = new DTO.DatasetParams({

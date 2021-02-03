@@ -17,20 +17,11 @@
         <span v-if="!error">{{ $t("message.step5-1") }}</span>
       </div>
       <v-btn
-        v-if="!error && linkFlag"
+        v-if="linkFlag"
         class="primary"
         style="width:85%"
         large
         @click="go_Linked_page"
-      >
-        <span class="white--text">{{ btnText }}</span>
-      </v-btn>
-      <v-btn
-        v-if="error"
-        class="primary"
-        style="width:85%"
-        large
-        @click="goHome"
       >
         <span class="white--text">{{ btnText }}</span>
       </v-btn>

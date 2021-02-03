@@ -3,7 +3,7 @@ import { timerCallback } from "./computeFrame";
 export function playWebcam(self) {
   console.log("⭐⭐playWebcam");
   self.uiflag.sample = false;
-  let realWidth = self.width_1280;
+  let realWidth = self.width_1024;
   let realHeight = realWidth * self.ID_type_Rate;
 
   if (self.stepType === "id") {

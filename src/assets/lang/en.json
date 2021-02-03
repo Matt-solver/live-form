@@ -25,6 +25,10 @@
   "step0-19": "Privacy Policy",
   "step0-20": "Agree",
   "step0-21": "Disagree",
+  
+  "step0-25": "Email validation results",
+  "step0-26": "An unexpected email format.",
+
   "step1-1": "Sorry, we don't accept KYC submissions from blacklisted countries.",
   "step1-2": "Country: ",
   "step1-3": "Select ID document issuing Country",

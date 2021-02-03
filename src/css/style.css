@@ -162,7 +162,11 @@ h1 div {
     background: url(../img/next.png) no-repeat center right 15px;
     background-size: 8px;
 }
-
+.select_box>a>p.on {    
+    background: url(../img/next_on.png) no-repeat center right 15px;    
+    background-color: #0077ff;
+    background-size: 8px;
+}
 .select_box>a {
     color: #2c7dde;
 }

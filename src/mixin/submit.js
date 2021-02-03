@@ -32,12 +32,12 @@ export default function submit(self, params, type) {
 
             /*** Temporary marked ***/
             console.log("🌈 Gathering the DATASET from vuex store")
-                // console.log('getProjectId',params.getProjectId())
-                // console.log('getIdImage',params.getIdImage())
-                // console.log('getFaceImage', params.getFaceImage())
-                // console.log('getAddress', params.getAddress())
-                // console.log('getAddressImage', params.getAddressImage())
-                /*****/
+            console.log('getProjectId',params.getProjectId())
+            console.log('getIdImage',params.getIdImage())
+            console.log('getFaceImage', params.getFaceImage())
+            console.log('getAddress', params.getAddress())
+            console.log('getAddressImage', params.getAddressImage())
+            /*****/
             const rs_params = await submit({
                 params: {
                     ds_addressImage: params.getAddressImage(),

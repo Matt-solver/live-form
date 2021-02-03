@@ -2,10 +2,7 @@
   <div ref="screen" class="screen fadein" v-resize="onResize">
     <Header :dataOfChild="title" v-on:update="backBtn"></Header>
 
-    <Alert-popup
-      :dataOfChild="popup"
-      v-on:update="close_alert"
-    ></Alert-popup>
+    <Alert-popup :dataOfChild="popup" v-on:update="close_alert"></Alert-popup>
 
     <div v-show="uiflag.success" class="successed_wrap z-index-4">
       <div class="successed">
@@ -17,7 +14,7 @@
     <h1 v-show="loading" class="sumit_box fadein z-index-4">
       <img
         src="../../img/loader.gif"
-        style="transform: translateY(50%);"
+        style="transform: translateY(50%)"
         alt="sumit"
       />
     </h1>
@@ -39,9 +36,6 @@
         class="focus absolute z-index-3"
         src="../../img/ARGOS_FOCUS.png"
       />
-      <!-- Matched face cut-->
-      <img ref="faceCut" class="faceCut fadein off" :src="image" />
-      <!--// Matched face cut -->
       <video
         v-show="uiflag.video"
         id="video"
@@ -50,19 +44,31 @@
         autoplay
         playsinline
       />
-      <canvas
-        v-show="uiflag.canvas"
-        id="c1"
-        ref="faceCanvas"
-        class="z-index-1"
-      ></canvas>
-      
-      <v-row v-show="$store.state.is_iOS && uiflag.localCamBtn" justify="center">
-        <label 
-          class="file-up mt-5" 
-          for="localCam"
-        >{{ $t("message.common-1") }}
-        </label>      
+      <canvas id="c1" ref="faceCanvas" class="z-index-1 off"></canvas>
+      <!--//* Matched face cut-->
+      <img
+        v-show="uiflag.thumbnail"
+        ref="faceCut"
+        class="faceCut fadein"
+        :src="image"
+      />
+    </div>
+
+    <div v-show="uiflag.photo_box" ref="photo_box" class="photo_box fadein">
+      <div>
+        <p class="mb-5">
+          <span>{{ $t("message.step3-6") }}</span
+          >{{ $t("message.step3-7") }}
+        </p>
+      </div>
+
+      <v-row
+        v-show="$store.state.is_iOS && uiflag.localCamBtn"
+        justify="center"
+      >
+        <label class="file-up mt-5" for="localCam"
+          >{{ $t("message.common-1") }}
+        </label>
         <input
           id="localCam"
           type="file"
@@ -73,14 +79,12 @@
           hidden
         />
       </v-row>
-    </div>
-    <div v-show="uiflag.photo_box" ref="photo_box" class="photo_box fadein">
-      <div>
-        <p class="mb-5">
-          <span>{{ $t("message.step3-6") }}</span>{{ $t("message.step3-7") }}
-        </p>
-      </div>
-      <a v-show="uiflag.shot_btn" ref="shot_btn" class="capture-btn" @click="next_step"
+
+      <a
+        v-show="uiflag.shot_btn"
+        ref="shot_btn"
+        class="capture-btn"
+        @click="next_step"
         ><img
           ref="shotBtn"
           class="shotBtn fadein opacity"

@@ -63,7 +63,7 @@ export function playLocalCam(self) {
         readImage.then(function(result) {
           console.log("✔️playLocalCam_id: success");
           self.image = result;
-          self.uiflag.canvas = true;
+          self.uiflag.thumbnail = true;
           self.uiflag.localCamBtn = false;
           // self.$refs.localCam.style.width = canvas.width + "px";
           // self.$refs.localCam.style.height = canvas.height + "px";
@@ -140,7 +140,7 @@ export function playLocalCam(self) {
           // console.log(result)
           self.image = result;
           self.uiflag.focus = false;
-          self.uiflag.canvas = true;
+          self.uiflag.thumbnail = true;
           self.uiflag.localCamBtn = false;
           // self.$refs.localCam.style.width = canvas.width + "px";
           // self.$refs.localCam.style.height = canvas.height + "px";
@@ -194,7 +194,7 @@ export function playLocalCam(self) {
             self.loading = false;
             // targetEvent(self, faceObj, streamDetecting)
             self.uiflag.sample = false;
-            // self.uiflag.canvas = true
+            // self.uiflag.thumbnail = true
             self.uiflag.next_btn = true;
             
             comm.showCheckBtn(self)
@@ -228,7 +228,7 @@ export function playLocalCam(self) {
     self.popup.err_content1 = err_content1;
     self.popup.err_content2 = err_content2;
     self.popup.alert_flag = true;
-    self.uiflag.canvas = false;
+    self.uiflag.thumbnail = false;
     self.loading = false;
     self.uiflag.sample = true;
 
@@ -249,10 +249,13 @@ export function playLocalCam(self) {
     }else{
       screenRate = (600 * 0.85) / img_w;
     }
+    console.log('screenRate', screenRate)
     if (type === "id") {
       if (img_w < img_h) {
         rate = 1 - img_w / img_h;
-        w = img_w * screenRate;
+        // w = img_w * screenRate;
+        // h = w - w * rate;
+        w = 1024;
         h = w - w * rate;
         
         canvas.width = w
@@ -268,7 +271,9 @@ export function playLocalCam(self) {
         ctx.restore();
       } else {
         rate = 1 - img_h / img_w;
-        w = img_w * screenRate;
+        // w = img_w * screenRate;
+        // h = w - w * rate;
+        w = 1024;
         h = w - w * rate;
         
         canvas.width = w;
@@ -280,7 +285,9 @@ export function playLocalCam(self) {
       }
     } else if (type === "face") {
       rate = 1 - img_h / img_w;
-      w = img_w * 0.7 * screenRate;
+      // w = img_w * 0.7 * screenRate;
+      // h = w - w * rate;
+      w = 1024;
       h = w - w * rate;
 
       canvas.width = w;

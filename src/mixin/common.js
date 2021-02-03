@@ -47,6 +47,14 @@ module.exports = {
   //     if(document.querySelector('.modal_1, .successed')) document.querySelector('.modal_1, .successed').style.background = '#20252b';
 
   // },
+  validate: function(type, value) {
+    console.log("✔️validate");
+    let regExp = null;
+    if (type === "email")
+        regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+    console.log(`${type} validation:`, regExp.test(value));
+    return regExp.test(value);
+  },
   stopStreamedVideo: function(videoElem) {
     console.log("☑️stopStreamedVideo")
     if (videoElem) {

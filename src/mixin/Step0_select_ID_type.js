@@ -51,9 +51,13 @@ export const Step0_select_ID_type = {
             orientation: 0,
             resizeFlag: "vertical",
             // Flags
+            flag:{
+
+            },
             flag_email_wrap: false,
             flag_home_btn: false,
             flag_email: false,
+            flag_isEmailVerified: false,
             flag_email_btn_click: false,
             flag_qrcode: false,
             flag_check_timeout_QR: true,
@@ -84,6 +88,7 @@ export const Step0_select_ID_type = {
         // this.$session.set("_failCnt", 0); //실패횟수
         this.$store.state.isDark = this.theme;
         await this.setLocation();
+        this.flag_isEmailVerified = comm.validate('email', this.email)
     },
     async mounted() {
         console.log(
@@ -101,7 +106,6 @@ export const Step0_select_ID_type = {
         // document.onclick = function() {
         //   self.orientation = window.orientation;
         // };
-
         if (ver === "automatic") self.$store.state.ver = "automatic";
         else if (ver === "manual") self.$store.state.ver = "manual";
         else self.$store.state.ver = "manual";
@@ -130,6 +134,21 @@ export const Step0_select_ID_type = {
         self.flag_enumerateDevices = enumerateDevices.length > 0 ? true : false;
         // console.log("enumerateDevices", enumerateDevices);
 
+        if (
+            // self.flag_options === true &&
+            self.flag_checkDeviceEnv === true &&
+            self.flag_hasGetUserMedia === true &&
+            self.flag_enumerateDevices === true
+        ) {
+            self.flag_qrcode = false;
+            console.log("💡 This device supported KYC service ");
+
+            self.flag_wrap = true;
+        } else {
+            self.runQRCode();
+            self.flag_qrcode = true;
+        }
+        
         let timestamp_email = self.$route.query.emailtime;
         let timestamp_QR = self.$route.query.qrtime;
         if (this.isOnline) {
@@ -185,26 +204,17 @@ export const Step0_select_ID_type = {
                     self.popup.alert_flag = true;
                 }
             }
-            if (
-                // self.flag_options === true &&
-                self.flag_checkDeviceEnv === true &&
-                self.flag_hasGetUserMedia === true &&
-                self.flag_enumerateDevices === true
-            ) {
-                self.flag_qrcode = false;
-                console.log("💡 This device supported KYC service ");
-
-                self.flag_wrap = true;
-            } else {
-                self.runQRCode();
-                self.flag_qrcode = true;
-            }
 
             self.loading = false;
         } else {
             self.popup.err_content1 = this.$t("message.step0-10");
             self.popup.err_content2 = this.$t("message.step0-11");
             self.popup.alert_flag = true;
+        }
+        if(this.$route.query.email && this.flag_isEmailVerified) {
+            this.flag_email = false;
+        } else{
+            this.flag_email = true;
         }
     },
     watch: {
@@ -220,7 +230,8 @@ export const Step0_select_ID_type = {
         },
         orientation: function() {
             window.location.href = "#home";
-            let card = [".card-1", ".card-2", ".card-3"];
+            // let card = [".card-1", ".card-2", ".card-3"];
+            let card = [".card-1"];
             switch (window.orientation) {
                 case 0:
                     for (let c of card) {
@@ -464,7 +475,7 @@ export const Step0_select_ID_type = {
             // 이메일 유효성 검사
             if (!this.email) this.popup.err_content1 = this.$t("message.step0-5");
             this.email = this.email.trim();
-            if (this.validate("email", this.email) === true) {
+            if (comm.validate("email", this.email) === true) {
                 this.$session.set("_email", this.email);
                 this.flag_email_btn_click = true;
                 this.runEmailTimer();
@@ -472,7 +483,6 @@ export const Step0_select_ID_type = {
 
                 return !!this.sendEmail();
             } else {
-                this.popup.err_content1 = this.$t("message.step0-5-a");
                 this.popup.alert_flag = true;
 
                 return false;
@@ -581,10 +591,29 @@ export const Step0_select_ID_type = {
             }
         },
         show_id_selector() {
-            // TODO Agreement section
+            if(!this.flag.login){
+                console.log("validate", comm.validate("email", this.email));
+                if (!comm.validate("email", this.email)) {
+                    console.log("이메일 형식이 올바르지 않습니다.");
+                    this.popup.err_content1 = this.$t("message.step0-25");
+                    this.popup.err_content2 = this.$t("message.step0-26");
+                    this.popup.alert_flag = true;
+                    return;
+                }
+            }
+            // 로그인 확인
+            if (this.flag.emailVerification) {
+                if (!this.flag.login && !this.flag.signup) {
+                    // 로그인이 안되어 있으면 이메일 인증
+                    console.log("‼ Executed email authenication!");
+                    this.emailAuthentication();
+                    this.$router.push("EmailSending");
+                    return;
+                }
+            }
+            // 약관 정책 동의 여부 확인
             // if (!this.checkAgreement()) return;
 
-            this.$refs.group.classList.add("blur-1");
 
             let idType = this.GET_TYPE;
 
@@ -601,6 +630,7 @@ export const Step0_select_ID_type = {
                 }
             }
             this.flag_select_box = true;
+            this.$refs.group.classList.add("blur-1");
         },
         closeBox() {
             this.$refs.group.classList.remove("blur-1");
@@ -614,14 +644,6 @@ export const Step0_select_ID_type = {
         // othersShow(){
         //   document.querySelector('.uppon_row').classList.remove('off')
         // },
-        validate: function(type, value) {
-            console.log("✔️validate");
-            let regExp = null;
-            if (type === "email")
-                regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
-            console.log("validation:", regExp.test(value));
-            return regExp.test(value);
-        },
         // updateValue: function ($event) { //Change user data
         //   if ($event) {
         //     this.email = $event.target.value
