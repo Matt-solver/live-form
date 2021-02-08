@@ -46,6 +46,7 @@ export const Step3_face_still_cut = {
         canvas: false,
         thumbnail: false,
         focus: true,
+        retry_btn: false,
       },
       browser: null,
       //canvas
@@ -137,6 +138,10 @@ export const Step3_face_still_cut = {
       this.$refs.faceCanvas.height = this.width_and_height_face;
       this.$refs.faceCanvas.style.width = this.width_and_height_face + "px";
       this.$refs.faceCanvas.style.height = this.width_and_height_face + "px";
+    }
+    if (this.$refs.faceCut) {
+        this.$refs.faceCut.width = this.width_and_height_face;
+        this.$refs.faceCut.style.width = this.width_and_height_face *0.7 + "px";
     }
     this.$store.state.is_iOS === false && await this.playWebcam(this, "face");
     this.$store.state.is_iOS === true && this.playLocalCam(this);
@@ -298,6 +303,14 @@ export const Step3_face_still_cut = {
       }
       
       this.onvideo = false
+    },
+    retry: function() {
+      console.log("✔️retry")
+      this.uiflag.localCamBtn = true
+      this.uiflag.next_btn = false
+      this.uiflag.retry_btn = false
+      this.uiflag.sample = true
+      this.uiflag.thumbnail = false
     },
     backBtn: async function() {
       console.log("✔️backBtn") 

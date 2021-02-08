@@ -55,7 +55,7 @@
     </div>
 
     <div v-show="uiflag.photo_box" ref="photo_box" class="photo_box fadein">
-      <div>
+      <div v-if="!uiflag.localCam">
         <p class="mb-5">
           <span>{{ $t("message.step3-6") }}</span
           >{{ $t("message.step3-7") }}
@@ -91,12 +91,14 @@
           src="../../img/camera.png"
           alt="camera"
       /></a>
-    </div>
-    <div v-if="uiflag.next_btn" ref="next_btn" class="text_box z-index-5">
-      <a @click="next_step()" class="on">{{ $t("message.step2-5") }}</a>
-    </div>
-    <div ref="retry_btn2" class="text_box2 z-index-5 off">
-      <a @click="retry()">{{ $t("message.step2-6") }}</a>
+      <div class="button_box" style="">
+        <div v-if="uiflag.next_btn" ref="next_btn" class="text_box z-index-5">
+          <a @click="next_step()" class="on">{{ $t("message.step2-5") }}</a>
+        </div>
+        <div v-show="uiflag.retry_btn" ref="retry_btn2" class="text_box2 z-index-5">
+          <a @click="retry()">{{ $t("message.step2-6") }}</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>

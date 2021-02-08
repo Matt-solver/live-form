@@ -158,11 +158,13 @@
           alt="camera"
       /></a>
     </div>
-    <div v-show="uiflag.next_btn" ref="retry_btn" class="text_box z-index-5">
-      <a @click="next_step()" class="on">{{ $t("message.step2-5") }}</a>
-    </div>
-    <div v-show="uiflag.retry_btn" ref="retry_btn2" class="text_box2 z-index-5">
-      <a @click="retry()">{{ $t("message.step2-6") }}</a>
+    <div class="button_box" style="">
+      <div v-show="uiflag.next_btn" ref="retry_btn" class="text_box z-index-5">
+        <a @click="next_step()" class="on">{{ $t("message.step2-5") }}</a>
+      </div>
+      <div v-show="uiflag.retry_btn" ref="retry_btn2" class="text_box2 z-index-5">
+        <a @click="retry()">{{ $t("message.step2-6") }}</a>
+      </div>
     </div>
   </div>
 </template>

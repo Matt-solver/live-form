@@ -422,23 +422,26 @@ h1 div {
     padding: 0 0 80px;
 }
 
-.text_box {
+.button_box {
     position: fixed;
     width: 100%;
+    bottom:17vh;
+}
+.text_box {
+    /* position: fixed; */
+    width: 100%;
     text-align: center;
-    bottom: 0;
-    padding: 0 0 120px;
+    /* bottom: 0; */
+    /* padding: 0 0 120px; */
 }
 
-
 /*****/
-
 .text_box2 {
-    position: fixed;
-    width: 100%;
+    margin-top: 2px;
+    /* position: fixed; */
     text-align: center;
-    bottom: 0;
-    padding: 0 0 60px;
+    /* bottom: 0; */
+    /* padding: 0 0 60px; */
 }
 
 .photo_box>div>p {

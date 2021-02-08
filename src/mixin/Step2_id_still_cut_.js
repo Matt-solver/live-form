@@ -382,7 +382,8 @@ export const Step2_id_still_cut_ = {
             ) {
                 console.log("Go Backside");
                 if (this.$store.state.is_iOS) {
-                    this.$refs.queryImage.classList.add("off");
+                    this.uiflag.thumbnail = true;
+                    // this.$refs.queryImage.classList.add("off");
                     // this.$refs.localCam.style.height = this.height_id + "px";
                     this.license_img = require("@/assets/static/img/ID_BACK.png");
                 }

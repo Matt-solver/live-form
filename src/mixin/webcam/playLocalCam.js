@@ -114,7 +114,7 @@ export function playLocalCam(self) {
         let readImage = new Promise(function(resolve) {
           img.onload = function() {
             console.log("✔️readImage: onload");
-            if (self.$refs.photo_box) self.$refs.photo_box.classList.add("off");
+            // if (self.$refs.photo_box) self.$refs.photo_box.classList.add("off");
 
             self.$store.state.isIdentityDocument = true;
             self.uiflag.sample = false;
@@ -142,6 +142,7 @@ export function playLocalCam(self) {
           self.uiflag.focus = false;
           self.uiflag.thumbnail = true;
           self.uiflag.localCamBtn = false;
+          self.uiflag.retry_btn = true;
           // self.$refs.localCam.style.width = canvas.width + "px";
           // self.$refs.localCam.style.height = canvas.height + "px";
 
