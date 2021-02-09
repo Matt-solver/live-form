@@ -56,9 +56,14 @@
                 :items="languageValues"
                 id="lang"
                 class="ma-3"
+                item-color="primary"
                 outlined
+                hide-details
                 dense
-                :menu-props="{ bottom: true, offsetY: true }"
+                validate-on-blur
+                :menu-props="{
+                  bottom: true, offsetY: true, maxHeight: 100
+                }"
                 @change="changeLang"
               >
               </v-select>
@@ -149,4 +154,7 @@ export default {
 };
 </script>
 <style>
+div.v-select-list {
+  background-color: #00857a;
+}
 </style>
