@@ -62,7 +62,9 @@
                 dense
                 validate-on-blur
                 :menu-props="{
-                  bottom: true, offsetY: true, maxHeight: 100
+                  bottom: true,
+                  offsetY: true,
+                  maxHeight: 100,
                 }"
                 @change="changeLang"
               >
@@ -140,13 +142,13 @@
 </template>
 
 <script>
-import { Step0_select_ID_type } from "@/mixin/Step0_select_ID_type";
-import AlertPopup from "./childComponent/AlertPopup";
-import selectBox from "./childComponent/comp-child-selectbox";
+import { StepToSelectIdType } from "@/mixin/StepToSelectIdType.js";
+import AlertPopup from "./childComponent/AlertPopup.vue";
+import selectBox from "./childComponent/SelectBox.vue";
 
 export default {
   name: "Step0",
-  mixins: [Step0_select_ID_type],
+  mixins: [StepToSelectIdType],
   components: {
     AlertPopup,
     selectBox,

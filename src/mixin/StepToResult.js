@@ -1,27 +1,27 @@
-import comm from "./common";
+import comm from './common';
 
-export const Step5_result = {
+export const StepToResult = {
   data() {
     return {
       error: false,
-      resultText1: "",
-      resultText2: "",
+      resultText1: '',
+      resultText2: '',
       step: 4,
-      text: "Thank you for submit your KYC",
+      text: 'Thank you for submit your KYC',
       linkFlag: false,
-      linkAddr: "",
+      linkAddr: '',
       failcnt: 0,
-      btnText: "Return to website",
+      btnText: 'Return to website',
 
       orientation: 0,
       resizeFlag: 'vertical',
     };
   },
-  create: function () {
-    this.failcnt = this.$session.get("_failCnt");
+  create: function() {
+    this.failcnt = this.$session.get('_failCnt');
   },
   async mounted() {
-    console.log("%c" + "🔥🔥🔥🔥🔥 STEP 5 Result 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
+    console.log('%c' + '🔥🔥🔥🔥🔥 STEP 5 Result 🔥🔥🔥🔥🔥', 'color:blue;font-weight:bold;');
 
     let self = this;
     // comm.inspectSession(self);
@@ -33,9 +33,9 @@ export const Step5_result = {
     // };
 
     // 연결링크
-    let connectionLink = this.$store.getters["optionStore/GET_CONNECTION_LINK"];
-    console.log("✔️connectionLink", connectionLink)
-    if (connectionLink && connectionLink.length > 5 && connectionLink !== "-") {
+    let connectionLink = this.$store.getters['optionStore/GET_CONNECTION_LINK'];
+    console.log('✔️connectionLink', connectionLink);
+    if (connectionLink && connectionLink.length > 5 && connectionLink !== '-') {
       self.linkFlag = true;
       self.linkAddr = connectionLink;
     }
@@ -45,27 +45,27 @@ export const Step5_result = {
     if (rs_params) {
       if (rs_params.data) {
         if (rs_params.data.output !== undefined) {
-          if (rs_params.data.output.toString() === "approved") {
-            self.resultText1 = this.$t("message.step5-2");
-            self.dataClear()
+          if (rs_params.data.output.toString() === 'approved') {
+            self.resultText1 = this.$t('message.step5-2');
+            self.dataClear();
           } else {
-            self.resultText1 = this.$t("message.step5-3");
-            self.resultText2 = this.$t("message.step5-4");
+            self.resultText1 = this.$t('message.step5-3');
+            self.resultText2 = this.$t('message.step5-4');
             self.dataClear();
           }
         } else {
-          self.resultText1 = this.$t("message.step5-3");
-          self.resultText2 = this.$t("message.step5-4");
+          self.resultText1 = this.$t('message.step5-3');
+          self.resultText2 = this.$t('message.step5-4');
           self.dataClear();
         }
       } else {
-        self.resultText1 = this.$t("message.step5-3");
-        self.resultText2 = this.$t("message.step5-4");
+        self.resultText1 = this.$t('message.step5-3');
+        self.resultText2 = this.$t('message.step5-4');
         self.dataClear();
       }
     } else {
-      self.resultText1 = this.$t("message.step5-3");
-      self.resultText2 = this.$t("message.step5-4");
+      self.resultText1 = this.$t('message.step5-3');
+      self.resultText2 = this.$t('message.step5-4');
       self.dataClear();
     }
     // if(rs_params){
@@ -86,7 +86,7 @@ export const Step5_result = {
     // } else { this.errorHandler() }
   },
   watch: {
-    orientation: function () {
+    orientation: function() {
       switch (window.orientation) {
         case 0:
           comm.viewportZoomset(1.0, 1.0, 1.0);
@@ -96,38 +96,37 @@ export const Step5_result = {
           break;
       }
     },
-    resizeFlag: function () {
-      console.log("✔️resizeFlag")
+    resizeFlag: function() {
+      console.log('✔️resizeFlag');
       if (this.resizeFlag === 'horizontal') {
-        console.log('가로모드 실행')
+        console.log('가로모드 실행');
         this.orientation = window.orientation;
       } else {
-        console.log('세로모드 실행')
+        console.log('세로모드 실행');
         this.orientation = window.orientation;
       }
-    }
+    },
   },
   methods: {
     onResize() {
       let x = window.innerWidth;
       let y = window.innerHeight;
       if (x > y) {
-        this.resizeFlag = 'horizontal'
+        this.resizeFlag = 'horizontal';
       } else {
-        this.resizeFlag = 'vertical'
+        this.resizeFlag = 'vertical';
       }
     },
-    go_Linked_page: function () {
+    go_Linked_page: function() {
       window.location.href = this.linkAddr;
     },
-    goHome: function () {
+    goHome: function() {
       this.$router.push(
-        `/main?pid=${this.$session.get("_projectId")}&email=${this.$session.get(
-          "_email"
-        )}&theme=${this.$store.state.isDark
-        }&apiKey=${comm.get_localStorage_with_expiry(
-          "_apiKey"
-        )}&oobCode=${comm.get_localStorage_with_expiry("_oobCode")}&mode=signIn`
+        `/main?pid=${this.$session.get('_projectId')}&email=${this.$session.get('_email')}&theme=${
+          this.$store.state.isDark
+        }&apiKey=${comm.get_localStorage_with_expiry('_apiKey')}&oobCode=${comm.get_localStorage_with_expiry(
+          '_oobCode',
+        )}&mode=signIn`,
       );
     },
     // doException: function(value) {
@@ -146,23 +145,23 @@ export const Step5_result = {
     //   }else{ return false }
 
     // },
-    dataClear: function () {
-      console.log("✔️dataClear")
+    dataClear: function() {
+      console.log('✔️dataClear');
       this.$session.destroy();
       this.$store.replaceState({});
     },
-    errorHandler: function () {
+    errorHandler: function() {
       let self = this;
       self.error = true;
-      self.resultText1 = this.$t("message.step5-5");
-      self.btnText = this.$t("message.step5-6");
+      self.resultText1 = this.$t('message.step5-5');
+      self.btnText = this.$t('message.step5-6');
       // this.$router.push(`/main?pid=${this.$session.get("_projectId")}&email=${this.$session.get("_email")}&theme=${this.$store.state.isDark}&apiKey=${comm.get_localStorage_with_expiry('_apiKey')}&oobCode=${comm.get_localStorage_with_expiry('_oobCode')}&mode=signIn`);
     },
     backBtn() {
       if (this.$session.exists()) {
-        this.$router.push('IdStillCut');
+        this.$router.push('TakeIdPhoto');
       } else {
-        window.location.href = "https://argos-solutions.io/ko/";
+        window.location.href = 'https://argos-solutions.io/ko/';
       }
     },
   },

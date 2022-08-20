@@ -1,16 +1,16 @@
 <template>
-  <div class="wrap fadein" v-resize="onResize">    
-        <canvas ref="canvas" class="off" ></canvas>
+  <div class="wrap fadein" v-resize="onResize">
+    <canvas ref="canvas" class="off"></canvas>
     <Header :dataOfChild="input0" v-on:update="backBtn"></Header>
 
     <FormulateForm
-        class="form-wrapper"
-        v-model="formdata"
-        @submit="submit"
-        style="height: 85vh;overflow-y: auto;"
+      class="form-wrapper"
+      v-model="formdata"
+      @submit="submit"
+      style="height: 85vh; overflow-y: auto"
     >
       <FormulateInput
-        :label=this.addressString
+        :label="this.addressString"
         type="group"
         validation="address"
         :validation-rules="{ address: addressRule }"
@@ -19,48 +19,48 @@
         <FormulateInput
           id="Street"
           class="text-left"
-          :name=input7
+          :name="input7"
           validation="required"
-          :placeholder=this.input1
+          :placeholder="this.input1"
           :onkeypress="test('Street')"
         />
         <FormulateInput
           class="text-left"
           name="Street2"
-          :placeholder=this.input2
+          :placeholder="this.input2"
         />
         <div class="triple mb-4">
           <FormulateInput
             id="City"
             class="text-left"
-            :name=input8
+            :name="input8"
             validation="required"
-            :placeholder=this.input3
+            :placeholder="this.input3"
             :onkeypress="test('City')"
           />
           <FormulateInput
             id="State"
             class="text-left"
-            :name=input9
+            :name="input9"
             validation="required"
-            :placeholder=this.input5
+            :placeholder="this.input5"
             :onkeypress="test('State')"
           />
           <FormulateInput
             id="Country"
             class="text-left"
-            :name=input10
+            :name="input10"
             validation="required"
-            :placeholder=this.input4
+            :placeholder="this.input4"
             :value="this.countryValue"
             :onkeypress="test('Country')"
           />
           <FormulateInput
             id="Zipcode"
             class="text-left"
-            :name=input11
+            :name="input11"
             validation="required"
-            :placeholder=this.input6
+            :placeholder="this.input6"
             :onkeypress="test('Zipcode')"
           />
         </div>
@@ -68,38 +68,35 @@
           type="file"
           capture="camera"
           class="text-left"
-          :name=input12
-          :label=input12
+          :name="input12"
+          :label="input12"
           accept="image/*"
           validation="required"
           :onkeypress="test('image')"
         />
       </FormulateInput>
-      
-      <FormulateInput
-          type="submit"
-          :value=this.submitBtn
-      />
+
+      <FormulateInput type="submit" :value="this.submitBtn" />
     </FormulateForm>
   </div>
 </template>
 <script>
-import {Proof_of_address} from '@/mixin/Proof_of_address'
-import Header from './childComponent/Header'
-require('../../css/snow.css')
+import { ProofOfAddress } from "@/mixin/ProofOfAddress.js";
+import Header from "./childComponent/Header.vue";
+require("../../css/snow.css");
 
 export default {
-  mixins: [Proof_of_address],
-  components:{
+  mixins: [ProofOfAddress],
+  components: {
     Header,
   },
-}
+};
 </script>
 <style scoped>
 .form-wrapper {
   padding: 2em;
   /* border: 3px solid #ececec; */
-  border-radius: .5em;
+  border-radius: 0.5em;
   box-sizing: border-box;
   max-width: 600px;
 }
@@ -117,7 +114,7 @@ export default {
     transform: translateX(-50%);
   }
   .triple .formulate-input {
-    margin-bottom: .25em;
+    margin-bottom: 0.25em;
     margin-right: 1em;
     flex-grow: 1;
   }
@@ -142,12 +139,11 @@ export default {
     display: flex;
   }
   .triple .formulate-input {
-    margin-bottom: .25em;
+    margin-bottom: 0.25em;
     margin-right: 1em;
   }
   .triple .formulate-input:last-child {
     margin-right: 0;
   }
 }
-
 </style>

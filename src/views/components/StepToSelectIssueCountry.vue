@@ -5,14 +5,14 @@
       v-on:update="backBtn"
     ></Header>
     <v-row align="center" justify="center">
-      <v-col style="padding:0">
+      <v-col style="padding: 0">
         <v-row align="center" justify="center">
           <div class="select_country limit-width wide my-5">
             <p class="pl-2">{{ $t("message.step1-3") }}</p>
             <v-text-field
               v-model="search"
               class="px-9"
-              style="border-radius:6px;"
+              style="border-radius: 6px"
               :placeholder="this.placeholder"
               append-icon="mdi-magnify"
               filled
@@ -34,7 +34,7 @@
           <v-card
             max-width="600"
             class="card mx-auto z-index-1"
-            style="height:80vh;overflow-y:auto"
+            style="height: 80vh; overflow-y: auto"
           >
             <v-list three-line>
               <div
@@ -47,7 +47,7 @@
                   <img
                     :src="require(`@/assets/country/${item.name}.png`)"
                     alt="korea"
-                  />{{item.label}}, {{item.value}}
+                  />{{ item.label }}, {{ item.value }}
                 </p>
 
                 <!-- <v-subheader
@@ -138,7 +138,7 @@
                   </v-list-item-content>
                 </v-list-item> -->
               </div>
-              <div class="wide title" style="text-align:center">
+              <div class="wide title" style="text-align: center">
                 {{ searchText }}
               </div>
             </v-list>
@@ -150,31 +150,28 @@
 </template>
 
 <script>
-import { Step1_select_issue_country } from "@/mixin/Step1_select_issue_country";
-import Header from "./childComponent/Header";
-import AlertPopup from "./childComponent/AlertPopup";
+import { StepToSelectIssueCountry } from "@/mixin/StepToSelectIssueCountry.js";
+import Header from "./childComponent/Header.vue";
+import AlertPopup from "./childComponent/AlertPopup.vue";
 
 export default {
   name: "Step1-2",
-  mixins: [Step1_select_issue_country],
+  mixins: [StepToSelectIssueCountry],
   components: {
     Header,
     AlertPopup,
   },
-  data(){
-    return{
-      flag:{
-        countryList: ''
-      }
-    }
+  data() {
+    return {
+      flag: {
+        countryList: "",
+      },
+    };
   },
-  mounted(){
-
-    this.onListEvent()
-
+  mounted() {
+    this.onListEvent();
   },
-  methods:{
-  }
+  methods: {},
 };
 </script>
 <style>

@@ -6,8 +6,14 @@
         <p style="background:url()">KYC Result</p>
       </div>
     </div>   -->
-    <h1 class="fadein" style="top:10%">
-      <img v-if="error" class="fadein" style="width:50%" src="../../img/error.png" alt="sumit" />
+    <h1 class="fadein" style="top: 10%">
+      <img
+        v-if="error"
+        class="fadein"
+        style="width: 50%"
+        src="../../img/error.png"
+        alt="sumit"
+      />
       <div class="sumit_box">
         <img v-if="!error" src="../../img/sumit.png" alt="sumit" />
         <p class="my-0">
@@ -19,7 +25,7 @@
       <v-btn
         v-if="linkFlag"
         class="primary"
-        style="width:85%"
+        style="width: 85%"
         large
         @click="go_Linked_page"
       >
@@ -29,11 +35,11 @@
   </div>
 </template>
 <script>
-import { Step5_result } from "@/mixin/Step5_result";
+import { StepToResult } from "@/mixin/StepToResult.js";
 
 // @ is an alias to /src
 export default {
-  mixins: [Step5_result],
+  mixins: [StepToResult],
 };
 </script>
 <style>

@@ -1,7 +1,7 @@
-import comm from "./common";
-import submit from "./submit";
+import comm from './common';
+import submit from './submit';
 
-export const Step4_submit = {
+export const StepToSubmit = {
   data() {
     return {
       step: 4,
@@ -11,20 +11,20 @@ export const Step4_submit = {
       isOnline: comm.checkNetwork(),
       popup: {
         alert_flag: false,
-        err_content1: "",
-        err_content2: "",
+        err_content1: '',
+        err_content2: '',
       },
-      rs_params: "",
+      rs_params: '',
       orientation: 0,
       resizeFlag: 'vertical',
       progressValue: 0,
     };
   },
   create: function() {
-    this.failcnt = self.$session.get("_failCnt");
+    this.failcnt = self.$session.get('_failCnt');
   },
   async mounted() {
-    console.log("%c"+"🔥🔥🔥🔥🔥 STEP 4 프로세싱 단계 🔥🔥🔥🔥🔥", "color:blue;font-weight:bold;");
+    console.log('%c' + '🔥🔥🔥🔥🔥 STEP 4 프로세싱 단계 🔥🔥🔥🔥🔥', 'color:blue;font-weight:bold;');
 
     let self = this;
     // comm.inspectSession(self);
@@ -38,22 +38,19 @@ export const Step4_submit = {
     self.cnt = 10;
     comm.scoreCounter(self, self.cnt, 40);
 
-    console.log(":::::::::::::::: Submit ::::::::::::::::");
+    console.log(':::::::::::::::: Submit ::::::::::::::::');
     if (this.isOnline) {
-      let ds_params = this.$store.getters["dataset/GET_DS_PARAMS"];
+      let ds_params = this.$store.getters['dataset/GET_DS_PARAMS'];
 
-      console.time("processingTime");
+      console.time('processingTime');
       try {
-        this.rs_params = await self.submit(self, ds_params, "LiveKYC");
+        this.rs_params = await self.submit(self, ds_params, 'LiveKYC');
       } catch (error) {
-        throw new Error("⛔"+ error);
+        throw new Error('⛔' + error);
       }
       console.timeEnd('processingTime');
 
-      console.log(
-        "Step4 SubmitResult",
-        JSON.stringify(this.rs_params, null, 2)
-      );
+      console.log('Step4 SubmitResult', JSON.stringify(this.rs_params, null, 2));
 
       // Limited Age
       let age = 19; //dummy age
@@ -63,8 +60,8 @@ export const Step4_submit = {
         return;
       }
     } else {
-      self.popup.err_content1 = "An occured Network Error";
-      self.popup.err_content2 = "Internet Disconnected.";
+      self.popup.err_content1 = 'An occured Network Error';
+      self.popup.err_content2 = 'Internet Disconnected.';
       self.popup.alert_flag = true;
     }
   },
@@ -80,24 +77,24 @@ export const Step4_submit = {
       }
     },
     resizeFlag: function() {
-      console.log("✔️resizeFlag")
-      if(this.resizeFlag === 'horizontal'){
-        console.log('가로모드 실행')
+      console.log('✔️resizeFlag');
+      if (this.resizeFlag === 'horizontal') {
+        console.log('가로모드 실행');
         this.orientation = window.orientation;
-      }else{
-        console.log('세로모드 실행')
+      } else {
+        console.log('세로모드 실행');
         this.orientation = window.orientation;
       }
     },
     progressValue: function() {
-      let screen = document.querySelector(".screen");
+      let screen = document.querySelector('.screen');
       if (this.progressValue >= 100) {
-        console.log("✔️Complete progress") 
+        console.log('✔️Complete progress');
         setTimeout(() => {
-          screen.classList.remove("fadein");
-          screen.classList.add("fadeout");
+          screen.classList.remove('fadein');
+          screen.classList.add('fadeout');
           this.$router.push({
-            name: "Step5",
+            name: 'Step5',
             params: { rs_params: this.rs_params },
           });
         }, 1000);
@@ -109,31 +106,27 @@ export const Step4_submit = {
     onResize() {
       let x = window.innerWidth;
       let y = window.innerHeight;
-      if(x>y){
-        this.resizeFlag = 'horizontal'
+      if (x > y) {
+        this.resizeFlag = 'horizontal';
       } else {
-        this.resizeFlag = 'vertical'
+        this.resizeFlag = 'vertical';
       }
     },
     close_alert() {
-      console.log("✔️close_alert") 
+      console.log('✔️close_alert');
       this.popup.alert_flag = false;
     },
     backBtn() {
       if (this.$session.exists()) {
         this.$router.push(
-          `/main/SelectIdType?pid=${this.$session.get(
-            "_projectId"
-          )}&email=${this.$session.get("_email")}&theme=${
+          `/main/SelectIdType?pid=${this.$session.get('_projectId')}&email=${this.$session.get('_email')}&theme=${
             this.$store.state.isDark
-          }&apiKey=${comm.get_localStorage_with_expiry(
-            "_apiKey"
-          )}&oobCode=${comm.get_localStorage_with_expiry(
-            "_oobCode"
-          )}&mode=signIn`
+          }&apiKey=${comm.get_localStorage_with_expiry('_apiKey')}&oobCode=${comm.get_localStorage_with_expiry(
+            '_oobCode',
+          )}&mode=signIn`,
         );
       } else {
-        window.location.href = "https://argos-solutions.io/ko/";
+        window.location.href = 'https://argos-solutions.io/ko/';
       }
     },
   },

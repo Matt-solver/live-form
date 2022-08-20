@@ -95,7 +95,11 @@
         <div v-if="uiflag.next_btn" ref="next_btn" class="text_box z-index-5">
           <a @click="next_step()" class="on">{{ $t("message.step2-5") }}</a>
         </div>
-        <div v-show="uiflag.retry_btn" ref="retry_btn2" class="text_box2 z-index-5">
+        <div
+          v-show="uiflag.retry_btn"
+          ref="retry_btn2"
+          class="text_box2 z-index-5"
+        >
           <a @click="retry()">{{ $t("message.step2-6") }}</a>
         </div>
       </div>
@@ -103,12 +107,12 @@
   </div>
 </template>
 <script>
-import { Step3_face_still_cut } from "@/mixin/Step3_face_still_cut";
-import Header from "./childComponent/Header";
-import AlertPopup from "./childComponent/AlertPopup";
+import { StepToTakeFacePhoto } from "@/mixin/StepToTakeFacePhoto.js";
+import Header from "./childComponent/Header.vue";
+import AlertPopup from "./childComponent/AlertPopup.vue";
 
 export default {
-  mixins: [Step3_face_still_cut],
+  mixins: [StepToTakeFacePhoto],
   components: {
     Header,
     AlertPopup,

@@ -86,11 +86,7 @@
         autoplay
         playsinline
       />
-      <canvas
-        id="c1"
-        ref="canvas"
-        class="fadein z-index-1 off"
-      ></canvas>
+      <canvas id="c1" ref="canvas" class="fadein z-index-1 off"></canvas>
       <!-- Face matching target -->
       <img
         v-show="uiflag.thumbnail"
@@ -127,7 +123,7 @@
         </p>
         <p class="mb-5">{{ this.$t("message.step2-14") }}</p>
       </div>
-      
+
       <v-row
         v-show="$store.state.is_iOS && uiflag.localCamBtn"
         justify="center"
@@ -162,7 +158,11 @@
       <div v-show="uiflag.next_btn" ref="retry_btn" class="text_box z-index-5">
         <a @click="next_step()" class="on">{{ $t("message.step2-5") }}</a>
       </div>
-      <div v-show="uiflag.retry_btn" ref="retry_btn2" class="text_box2 z-index-5">
+      <div
+        v-show="uiflag.retry_btn"
+        ref="retry_btn2"
+        class="text_box2 z-index-5"
+      >
         <a @click="retry()">{{ $t("message.step2-6") }}</a>
       </div>
     </div>
@@ -170,12 +170,12 @@
 </template>
 
 <script>
-import { Step2_id_still_cut_ } from "@/mixin/Step2_id_still_cut_";
-import AlertPopup from "./childComponent/AlertPopup";
-import Header from "./childComponent/Header";
+import { StepToTakeIdPhoto } from "@/mixin/StepToTakeIdPhoto.js";
+import AlertPopup from "./childComponent/AlertPopup.vue";
+import Header from "./childComponent/Header.vue";
 
 export default {
-  mixins: [Step2_id_still_cut_],
+  mixins: [StepToTakeIdPhoto],
   components: {
     Header,
     AlertPopup,

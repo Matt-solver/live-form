@@ -1,10 +1,14 @@
 <template>
-  <div class="screen fadein" style="width:100%;height:100%" v-resize="onResize">
+  <div
+    class="screen fadein"
+    style="width: 100%; height: 100%"
+    v-resize="onResize"
+  >
     <Header
       :dataOfChild="$store.state.titleType"
       v-on:update="backBtn"
     ></Header>
-    
+
     <!-- Alert -->
     <div class="text-center z-index-4">
       <v-dialog v-model="alert_flag2" width="500">
@@ -28,14 +32,11 @@
         </v-card>
       </v-dialog>
     </div>
-    <Alert-popup
-      :dataOfChild="popup"
-      v-on:update="close_alert"
-    ></Alert-popup>
+    <Alert-popup :dataOfChild="popup" v-on:update="close_alert"></Alert-popup>
 
-    <v-row align="center" justify="center" style="height:100%">
+    <v-row align="center" justify="center" style="height: 100%">
       <v-col>
-        <div class="sumit_box fadein wide" style="margin-bottom:50%">
+        <div class="sumit_box fadein wide" style="margin-bottom: 50%">
           <v-progress-circular
             class="my-10"
             :rotate="-90"
@@ -54,13 +55,13 @@
   </div>
 </template>
 <script>
-import { Step4_submit } from "@/mixin/Step4_submit";
-import Header from "./childComponent/Header";
-import AlertPopup from "./childComponent/AlertPopup";
+import { StepToSubmit } from "@/mixin/StepToSubmit.js";
+import Header from "./childComponent/Header.vue";
+import AlertPopup from "./childComponent/AlertPopup.vue";
 
 // @ is an alias to /src
 export default {
-  mixins: [Step4_submit],
+  mixins: [StepToSubmit],
   components: {
     Header,
     AlertPopup,

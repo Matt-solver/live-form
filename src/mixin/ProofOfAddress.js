@@ -1,37 +1,35 @@
-import comm from "./common";
-import * as DTO from "@/model/DataObject";
-import { mapActions, mapGetters } from "vuex";
+import comm from './common';
+import * as DTO from '@/model/DataObject';
+import { mapActions, mapGetters } from 'vuex';
 
-export const Proof_of_address = {
+export const ProofOfAddress = {
   data() {
     return {
       formdata: {},
-      countryValue: this.$store.state.Issue_country_name
-        ? this.$store.state.Issue_country_name
-        : "",
-      addressString: this.$t("message.address1-4"),
-      input0: this.$t("message.address1-12"),
-      input1: this.$t("message.address1-5"),
-      input2: this.$t("message.address1-6"),
-      input3: this.$t("message.address1-7"),
-      input4: this.$t("message.address1-8"),
-      input5: this.$t("message.address1-9"),
-      input6: this.$t("message.address1-10"),
-      input7: this.$t("message.address1-13"),
-      input8: this.$t("message.address1-14"),
-      input9: this.$t("message.address1-15"),
-      input10: this.$t("message.address1-16"),
-      input11: this.$t("message.address1-17"),
-      input12: this.$t("message.address1-18"),
+      countryValue: this.$store.state.Issue_country_name ? this.$store.state.Issue_country_name : '',
+      addressString: this.$t('message.address1-4'),
+      input0: this.$t('message.address1-12'),
+      input1: this.$t('message.address1-5'),
+      input2: this.$t('message.address1-6'),
+      input3: this.$t('message.address1-7'),
+      input4: this.$t('message.address1-8'),
+      input5: this.$t('message.address1-9'),
+      input6: this.$t('message.address1-10'),
+      input7: this.$t('message.address1-13'),
+      input8: this.$t('message.address1-14'),
+      input9: this.$t('message.address1-15'),
+      input10: this.$t('message.address1-16'),
+      input11: this.$t('message.address1-17'),
+      input12: this.$t('message.address1-18'),
 
-      submitBtn: this.$t("message.address1-11"),
+      submitBtn: this.$t('message.address1-11'),
 
       orientation: 0,
     };
   },
   created: function() {},
   async mounted() {
-    console.log("%c"+"🔥🔥🔥🔥🔥 Proof of address 🔥🔥🔥🔥🔥", "color:green;font-weight:bold;");
+    console.log('%c' + '🔥🔥🔥🔥🔥 Proof of address 🔥🔥🔥🔥🔥', 'color:green;font-weight:bold;');
     // comm.inspectSession(this);
     // 가로화면 세팅
     this.orientation = window.orientation;
@@ -39,8 +37,7 @@ export const Proof_of_address = {
     //   this.orientation = window.orientation;
     // };
 
-    document.querySelector(".form-wrapper").style.width =
-      window.innerWidth + "px";
+    document.querySelector('.form-wrapper').style.width = window.innerWidth + 'px';
   },
   watch: {
     orientation: function() {
@@ -54,35 +51,35 @@ export const Proof_of_address = {
       }
     },
     resizeFlag: function() {
-      console.log("✔️resizeFlag")
-      if(this.resizeFlag === 'horizontal'){
-        console.log('가로모드 실행')
+      console.log('✔️resizeFlag');
+      if (this.resizeFlag === 'horizontal') {
+        console.log('가로모드 실행');
         this.orientation = window.orientation;
-      }else{
-        console.log('세로모드 실행')
+      } else {
+        console.log('세로모드 실행');
         this.orientation = window.orientation;
       }
-    }
+    },
   },
   computed: {
-    ...mapGetters("dataset", ["GET_DS_PARAMS"]),
+    ...mapGetters('dataset', ['GET_DS_PARAMS']),
   },
   methods: {
-    ...mapActions("dataset", ["ACT_ADDR_PARAMS", "ACT_ADDR_IMAGE"]),
+    ...mapActions('dataset', ['ACT_ADDR_PARAMS', 'ACT_ADDR_IMAGE']),
     onResize() {
       let x = window.innerWidth;
       let y = window.innerHeight;
-      if(x>y){
-        this.resizeFlag = 'horizontal'
+      if (x > y) {
+        this.resizeFlag = 'horizontal';
       } else {
-        this.resizeFlag = 'vertical'
+        this.resizeFlag = 'vertical';
       }
     },
     backBtn() {
       if (this.$session.exists()) {
-        this.$router.push('FaceStillcut');
+        this.$router.push('TakeFacePhoto');
       } else {
-        window.location.href = "https://argos-solutions.io/ko/";
+        window.location.href = 'https://argos-solutions.io/ko/';
       }
     },
     addressRule({ value }) {
@@ -92,37 +89,23 @@ export const Proof_of_address = {
         //   if(address.zipcode.length >= 6)
         //      address.zipcode = parseInt(address.zipcode)
 
-        return (
-          address.street &&
-          address.city &&
-          address.country &&
-          address.state &&
-          address.zipcode
-        );
+        return address.street && address.city && address.country && address.state && address.zipcode;
       }
       return false;
     },
     test(key) {
       let tagbox = document.querySelector(`#${key}`);
-      if (tagbox) tagbox.style.border = "1px solid #cecece";
+      if (tagbox) tagbox.style.border = '1px solid #cecece';
     },
     addressMessage({ value }) {
       if (Array.isArray(value)) {
         const [address] = value;
-        const missing = [
-          "Street",
-          "City",
-          "Country",
-          "State",
-          "Zipcode",
-        ].reduce((missing, field) => {
+        const missing = ['Street', 'City', 'Country', 'State', 'Zipcode'].reduce((missing, field) => {
           if (!address[field]) {
             missing.push(field);
-            document.querySelector(`#${field}`).style.border =
-              "1px solid red";
+            document.querySelector(`#${field}`).style.border = '1px solid red';
           } else {
-            document.querySelector(`#${field}`).style.border =
-              "1px solid #cecece";
+            document.querySelector(`#${field}`).style.border = '1px solid #cecece';
           }
           return missing;
         }, []);
@@ -133,14 +116,13 @@ export const Proof_of_address = {
       // return this.$t("message.address1-3")
     },
     submit() {
-      console.log("✔️submit")
+      console.log('✔️submit');
       let self = this;
       let c1 = self.$refs.canvas;
-      let ctx = self.$refs.canvas.getContext("2d");
+      let ctx = self.$refs.canvas.getContext('2d');
       let dataset, params;
       let addrObj = this.formdata[Object.keys(this.formdata)[0]][0];
-      let fileObj = this.formdata[Object.keys(this.formdata)[0]][0][this.input12]
-        .fileList[0];
+      let fileObj = this.formdata[Object.keys(this.formdata)[0]][0][this.input12].fileList[0];
       let img = new Image();
       img.src = URL.createObjectURL(fileObj);
 
@@ -152,24 +134,24 @@ export const Proof_of_address = {
           let screenRate = (window.innerWidth * 0.85) / img_w;
 
           rate = 1 - img_h / img_w;
-          console.log("비율:", rate);
+          console.log('비율:', rate);
           w = img_w * screenRate;
           h = w - w * rate;
 
           c1.width = w;
           c1.height = h;
-          c1.style.width = c1.width + "px";
-          c1.style.height = c1.height + "px";
+          c1.style.width = c1.width + 'px';
+          c1.style.height = c1.height + 'px';
 
           ctx.drawImage(img, 0, 0, c1.width, c1.height);
 
-          return resolve(c1.toDataURL("image/png"));
+          return resolve(c1.toDataURL('image/png'));
         };
       });
       readImage.then(function(addressImage) {
-        console.log('addrObj', addrObj)
+        console.log('addrObj', addrObj);
         dataset = new DTO.Dataset(addrObj);
-        console.log('dataset', dataset)
+        console.log('dataset', dataset);
         params = new DTO.DatasetParams(dataset);
         let params2 = new DTO.DatasetParams({
           addressImage: addressImage,
@@ -178,8 +160,8 @@ export const Proof_of_address = {
         self.ACT_ADDR_PARAMS(params.getAddress);
         self.ACT_ADDR_IMAGE(params2.getAddressImage);
 
-        console.log("GET_DS_PARAMS", self.GET_DS_PARAMS);
-        console.log("getAddress", self.GET_DS_PARAMS.getAddress());
+        console.log('GET_DS_PARAMS', self.GET_DS_PARAMS);
+        console.log('getAddress', self.GET_DS_PARAMS.getAddress());
         // console.log('GET_DS_PARAMS', self.GET_DS_PARAMS.getAddress())
         // console.log('GET_DS_PARAMS', self.GET_DS_PARAMS.getAddressImage())
 

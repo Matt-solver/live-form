@@ -1,8 +1,8 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import optionStore from "./optionStore";
-import dataset from "./dataset";
-import languageObject from "@/helpers/languageObject.json";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import optionStore from './optionStore';
+import dataset from './dataset';
+import languageObject from '@/helpers/languageObject.json';
 
 Vue.use(Vuex);
 
@@ -32,16 +32,16 @@ const store = new Vuex.Store({
     tmpId: null,
     //get custom options
     LMT_AGE: 0,
-    LMT_country: ["PRK", "IRI"],
+    LMT_country: ['PRK', 'IRI'],
     connectionLink: null,
-    isDark: false,
+    isDark: 'dark',
     search: null,
     regionCode: null,
     ds_params: {},
     isPerson: false,
     isIdentityDocument: false,
     kycLevel: null,
-    titleType: "",
+    titleType: '',
     language: languageObject,
   },
   modules: {
