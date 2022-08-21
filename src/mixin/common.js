@@ -1,17 +1,15 @@
+import { MOBILES, DEVICES, BROWSERS, WARN } from './CommonConstants';
+
 let x_arr = [],
   y_arr = [],
   width_arr = [],
   height_arr = [],
   confidence_arr = [];
 
-module.exports = {
+export default {
   checkNetwork() {
-    console.log("☑️checkNetwork")
-    if (!navigator.onLine) {
-      return false;
-    } else {
-      return true;
-    }
+    console.log('☑️checkNetwork');
+    return !!navigator.onLine;
   },
   // inspectSession: function(self) {
   //   console.log("☑️inspectSession")
@@ -48,15 +46,14 @@ module.exports = {
 
   // },
   validate: function(type, value) {
-    console.log("✔️validate");
+    console.log('✔️validate');
     let regExp = null;
-    if (type === "email")
-        regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+    if (type === 'email') regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
     console.log(`${type} validation:`, regExp.test(value));
     return regExp.test(value);
   },
   stopStreamedVideo: function(videoElem) {
-    console.log("☑️stopStreamedVideo")
+    console.log('☑️stopStreamedVideo');
     if (videoElem) {
       if (videoElem.srcObject) {
         const stream = videoElem.srcObject;
@@ -69,121 +66,66 @@ module.exports = {
       }
     }
   },
-  //(Common)모든 공백제거
-  rmBlank: (str) => str.replace(/(\s*)/g, ""),
-
+  // Remove blank
+  rmBlank: str => str.replace(/(\s*)/g, ''),
   enumerateDevices: async () => {
-    console.log("☑️enumerateDevices")
+    console.log('☑️enumerateDevices');
     let deviceArr = [];
-    // navigator.mediaDevices.getUserMedia({ audio: false,  video: {} }).then(mediaStream => console.log(mediaStream))
     if (navigator.mediaDevices) {
       return navigator.mediaDevices.enumerateDevices().then(function(devices) {
-        devices.map(async (device) => {
-          if (device.kind === "videoinput") {
+        devices.map(async device => {
+          if (device.kind === 'videoinput') {
             deviceArr.push(device);
-            // console.log("device", device);
-            // console.log("device.kind", device.kind);
           }
         });
         return deviceArr;
       });
     } else {
-      console.error("Not supported media devices");
+      console.warn(WARN.NOT_SUPPORTED_MEDIA_DEVICES);
     }
   },
   // changeStep: (value) => {
   //     this.$emit('child-step', value)
   // },
+  // Check local camera exists
   hasGetUserMedia: function(navigator) {
-    console.log("☑️hasGetUserMedia")
-    // Check the cam exists
+    console.log('☑️hasGetUserMedia');
     return !!(
-      navigator.mediaDevices.getUserMedia ||
+      navigator.mediaDevices?.getUserMedia ||
       navigator.webkitGetUserMedia ||
       navigator.mozGetUserMedia ||
       navigator.msGetUserMedia
     );
   },
   isMobile: function(device) {
-    console.log("☑️isMobile")
-    const labels = [
-      "iphone",
-      "ipad",
-      "mac",
-      "android",
-      "pixel",
-      "webos",
-      "bada",
-      "blackberry",
-      "nokia",
-      "meego",
-      "symbian",
-    ];
-    return !!(labels.indexOf(device) > -1 ? true : false);
+    console.log('☑️isMobile');
+    return !!(MOBILES.indexOf(device) > -1 ? true : false);
   },
   getDeviceName: function() {
-    console.log("☑️getDeviceName")
+    console.log('☑️getDeviceName');
     const userAgent = navigator.userAgent.toLowerCase();
-    // console.log("device information", userAgent);
-    const labels = [
-      "iphone",
-      "ipad",
-      "mac",
-      "android",
-      "pixel",
-      "webos",
-      "bada",
-      "blackberry",
-      "nokia",
-      "meego",
-      "symbian",
-      "windows",
-      "linux",
-    ];
-    let result = labels.filter((el) => userAgent.indexOf(el) > -1);
-
-    // console.log("getDeviceName", result);
-
+    const result = DEVICES.filter(el => userAgent.indexOf(el) > -1);
     return result[0];
   },
   getBrowserName: function() {
-    console.log("☑️getBrowserName")
+    console.log('☑️getBrowserName');
     const userAgent = navigator.userAgent.toLowerCase();
-    // console.log("browser information", userAgent);
-    const labels = [
-      "msie",
-      "edg",
-      "opera",
-      "vivaldi",
-      "whale",
-      "samsung",
-      "slimjet",
-      "midori",
-      "firefox",
-      "chrome",
-      "safari",
-    ];
-    let result = labels.filter((el) => userAgent.indexOf(el) > -1);
-
-    // console.log("getBrowserName", result);
-
+    const result = BROWSERS.filter(el => userAgent.indexOf(el) > -1);
     return result[0];
   },
   errorPage: function(errorType, step, message, failcnt) {
-    console.log("☑️errorPage")
-    // document.querySelector("#matt").innerHTML = "";
-    // document.querySelector("#img").classList.add('off');
+    console.log('☑️errorPage');
     this.$router.push({
-      name: "ErrorPage",
+      name: 'ErrorPage',
       params: {
-        step: step ? step : "",
-        message: message ? message : "",
-        errorType: errorType ? errorType : "",
+        step: step ? step : '',
+        message: message ? message : '',
+        errorType: errorType ? errorType : '',
         failcnt: failcnt ? failcnt : 0,
       },
     });
   },
-  curry: (fn) => {
+  curry: fn => {
     let arity = fn.length;
 
     return (function resolver() {
@@ -196,41 +138,39 @@ module.exports = {
       };
     })();
   },
-  extractErrorcode: (func) => (value) =>
-    value.toString().indexOf("Error") > -1 ? func(value) : value,
-  default: (value) => {
+  extractErrorcode: func => value => (value.toString().indexOf('Error') > -1 ? func(value) : value),
+  default: value => {
     return value;
   },
   //숫자만 추출
-  extractInt: (str) => {
+  extractInt: str => {
     const reg = /[^0-9]/g;
-    return reg.test(str) ? parseInt(str.replace(reg, "")) : str;
+    return reg.test(str) ? parseInt(str.replace(reg, '')) : str;
   },
   //문자만 추출
-  extractString: (str) =>
-    /[^a-zA-Z]/g.test(str) ? str.replace(/[^a-zA-Z]/g, "") : str,
-  getBlobImg: (data) => {
-    console.log("☑️getBlobImg")
-    return new Promise((resolve) => {
+  extractString: str => (/[^a-zA-Z]/g.test(str) ? str.replace(/[^a-zA-Z]/g, '') : str),
+  getBlobImg: data => {
+    console.log('☑️getBlobImg');
+    return new Promise(resolve => {
       data.toBlob(
         async function(blob) {
           resolve(blob);
         },
-        "image/png",
-        1
+        'image/png',
+        1,
       );
     });
   },
   blobToFile: (blob, fileName) => {
-    console.log("☑️blobToFile")
+    console.log('☑️blobToFile');
     //A Blob() is almost a File() - it's just missing the two properties below which we will add
     blob.lastModifiedDate = Date.now();
     blob.name = fileName;
     return blob;
   },
   calcAverage: () => {
-    console.log("☑️calcAverage")
-    return (obj) => {
+    console.log('☑️calcAverage');
+    return obj => {
       x_arr.push(obj.x);
       y_arr.push(obj.y);
       width_arr.push(obj.width);
@@ -241,18 +181,15 @@ module.exports = {
       let y_avr = y_arr.reduce((a, b) => a + b) / y_arr.length;
       let width_avr = width_arr.reduce((a, b) => a + b) / width_arr.length;
       let height_avr = height_arr.reduce((a, b) => a + b) / height_arr.length;
-      let confidence_avr =
-        confidence_arr.reduce((a, b) => a + b) / confidence_arr.length;
+      let confidence_avr = confidence_arr.reduce((a, b) => a + b) / confidence_arr.length;
 
-      return `average - x:${x_avr.toFixed(2)} y:${y_avr.toFixed(
-        2
-      )} width:${width_avr.toFixed(2)} height:${height_avr.toFixed(
-        2
-      )} confidence:${confidence_avr.toFixed(2)}`;
+      return `average - x:${x_avr.toFixed(2)} y:${y_avr.toFixed(2)} width:${width_avr.toFixed(
+        2,
+      )} height:${height_avr.toFixed(2)} confidence:${confidence_avr.toFixed(2)}`;
     };
   },
   scoreCounter: function(self, limit, speed) {
-    console.log("☑️scoreCounter")
+    console.log('☑️scoreCounter');
     let start = setInterval(() => {
       if (self.$store.state.progressValue >= limit) {
         clearInterval(start);
@@ -263,27 +200,16 @@ module.exports = {
     }, speed);
   },
   viewportZoomset: function(initial, minimum, maximum) {
-    console.log("☑️viewportZoomset")
+    console.log('☑️viewportZoomset');
     let viewport = document.querySelector("meta[name='viewport']");
     viewport.content =
-      "initial-scale=" +
-      initial / 2 +
-      ", minimum-scale=" +
-      minimum / 2 +
-      ", maximum-scale=" +
-      maximum / 2;
+      'initial-scale=' + initial / 2 + ', minimum-scale=' + minimum / 2 + ', maximum-scale=' + maximum / 2;
     setTimeout(function() {
-      viewport.content =
-        "initial-scale=" +
-        initial +
-        ", minimum-scale=" +
-        minimum +
-        ", maximum-scale=" +
-        maximum;
+      viewport.content = 'initial-scale=' + initial + ', minimum-scale=' + minimum + ', maximum-scale=' + maximum;
     }, 350);
   },
   set_localStorage_with_expiry: function(key, value, holdingTime) {
-    console.log("☑️set_localStorage_with_expiry")
+    console.log('☑️set_localStorage_with_expiry');
     const expiry = Date.now() + holdingTime;
     const item = {
       value: value,
@@ -292,29 +218,28 @@ module.exports = {
     localStorage.setItem(key, JSON.stringify(item));
   },
   get_localStorage_with_expiry: function(key) {
-    console.log("☑️get_localStorage_with_expiry")
+    console.log('☑️get_localStorage_with_expiry');
     const itemStr = localStorage.getItem(key);
     if (!itemStr) {
-      return "no_apiky";
+      return 'no_apiky';
     }
     const item = JSON.parse(itemStr);
     const now = Date.now();
     // console.log('now: '+now)
     // console.log('item.expiry: '+item.expiry)
     if (now > item.expiry) {
-      return "Expired";
+      return 'Expired';
     }
     return item.value;
   },
-  showCheckBtn: function(self) {  
-    console.log("☑️showCheckBtn")  
+  showCheckBtn: function(self) {
+    console.log('☑️showCheckBtn');
     self.uiflag.success = true;
     setTimeout(() => {
-      if (self.$refs.successed_wrap)
-        self.$refs.successed_wrap.classList.add("fadeout");
+      if (self.$refs.successed_wrap) self.$refs.successed_wrap.classList.add('fadeout');
       setTimeout(() => {
         self.uiflag.success = false;
       }, 1000);
     }, 1000);
-  }
+  },
 };

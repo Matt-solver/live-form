@@ -92,82 +92,77 @@ export const StepToSelectIdType = {
     console.log('%c 🔥🔥🔥🔥🔥 STEP 0 Select ID Type 🔥🔥🔥🔥🔥', 'color:blue;font-weight:bold;');
     this.setScreenHeight();
 
-    let self = this;
-    let ver = self.$route.query.ver;
-    let langObj = self.$store.state.language;
+    const mode = this.$route.query.ver;
+    const language = this.$store.state.language;
 
     // 가로화면 세팅
-    self.orientation = window.orientation;
+    this.orientation = window.orientation;
     // document.onclick = function() {
-    //   self.orientation = window.orientation;
+    //   this.orientation = window.orientation;
     // };
-    if (ver === 'automatic') self.$store.state.ver = 'automatic';
-    else if (ver === 'manual') self.$store.state.ver = 'manual';
-    else self.$store.state.ver = 'manual';
+    if (mode === 'automatic') this.$store.state.ver = 'automatic';
+    else if (mode === 'manual') this.$store.state.ver = 'manual';
+    else this.$store.state.ver = 'manual';
     this.language = navigator.language.substr(0, 2);
-    // this.language = navigator.language
-    this.lang = langObj[this.language].name;
+    this.lang = language[this.language].name;
 
-    for (let i in langObj) {
-      if (langObj[i].status) this.tmp.push(langObj[i]);
+    for (let i in language) {
+      if (language[i].status) this.tmp.push(language[i]);
     }
     if (this.lang) {
       this.$i18n.locale = this.language;
-      // this.languageKeys = Object.keys(langObj)
       this.languageValues = this.tmp.map(obj => obj.name);
-      // document.querySelector('#lang option[value='+language+']').setAttribute('selected',"true");
     }
     this.qrcode = this.$refs.qrcode;
 
     // Check if webcam is available
-    self.flag_hasGetUserMedia = comm.hasGetUserMedia(navigator);
+    this.flag_hasGetUserMedia = comm.hasGetUserMedia(navigator);
     // check if device environment is available
-    self.flag_checkDeviceEnv = self.checkDeviceEnv();
+    this.flag_checkDeviceEnv = this.checkDeviceEnv();
 
     //check enumerateDevices
     let enumerateDevices = await comm.enumerateDevices();
-    self.flag_enumerateDevices = enumerateDevices.length > 0 ? true : false;
-    // console.log("enumerateDevices", enumerateDevices);
+    this.flag_enumerateDevices = enumerateDevices?.length > 0 ? true : false;
 
     if (
-      // self.flag_options === true &&
-      self.flag_checkDeviceEnv === true &&
-      self.flag_hasGetUserMedia === true &&
-      self.flag_enumerateDevices === true
+      // this.flag_options === true &&
+      this.flag_checkDeviceEnv === true &&
+      this.flag_hasGetUserMedia === true &&
+      this.flag_enumerateDevices === true
     ) {
-      self.flag_qrcode = false;
+      this.flag_qrcode = false;
       console.log('💡 This device supported KYC service ');
 
-      self.flag_wrap = true;
+      this.flag_wrap = true;
     } else {
-      self.runQRCode();
-      self.flag_qrcode = true;
+      this.runQRCode();
+      this.flag_qrcode = true;
     }
 
-    let timestamp_email = self.$route.query.emailtime;
-    let timestamp_QR = self.$route.query.qrtime;
+    let timestamp_email = this.$route.query.emailtime;
+    let timestamp_QR = this.$route.query.qrtime;
     if (this.isOnline) {
       //-- 20201207 옵션 api 동기처리
-      await self.getCustomizationOptions();
+      await this.getCustomizationOptions();
       // 이메일 인증 여부 분기
-      if (self.GET_EMAIL_VERIFICATION === true) {
+      if (this.GET_EMAIL_VERIFICATION === true) {
         if (this.$route.query.apiKey && this.$route.query.oobCode) {
           // check timeout
           if (timestamp_email) {
-            self.flag_check_timeout_email = self.checkTimeout(timestamp_email, self.limitedTime);
-            if (self.flag_check_timeout_email) {
-              if (self.isEmailAuth) this.flag_home_btn = true;
+            this.flag_check_timeout_email = this.checkTimeout(timestamp_email, this.limitedTime);
+            if (this.flag_check_timeout_email) {
+              if (this.isEmailAuth) this.flag_home_btn = true;
               this.flag_email = false;
 
               this.isEmailAuthenticated() && this.loginStatusManagement();
             } else {
               this.flag_email = true;
-              self.popup.err_content1 = this.$t('message.step0-12');
-              self.popup.err_content2 = this.$t('message.step0-14');
-              self.popup.alert_flag = true;
+              this.popup.err_content1 = this.$t('message.step0-12');
+              this.popup.err_content2 = this.$t('message.step0-14');
+              this.popup.alert_flag = true;
             }
           } else {
-            if (self.isEmailAuth) this.flag_home_btn = false;
+            if (this.isEmailAuth) this.flag_home_btn = false;
             this.flag_email = false;
 
             this.isEmailAuthenticated() && this.loginStatusManagement();
@@ -178,7 +173,7 @@ export const StepToSelectIdType = {
         } else {
           this.flag_email = true;
         }
-      } else if (!self.GET_EMAIL_VERIFICATION) {
+      } else if (!this.GET_EMAIL_VERIFICATION) {
         this.login();
       } else {
         this.flag_email = false;
@@ -186,19 +181,19 @@ export const StepToSelectIdType = {
 
       //Inspect QR Code
       if (timestamp_QR) {
-        self.flag_check_timeout_QR = self.checkTimeout(timestamp_QR, self.limitedTime);
-        if (!self.flag_check_timeout_QR) {
-          self.popup.err_content1 = this.$t('message.step0-13');
-          self.popup.err_content2 = this.$t('message.step0-14');
-          self.popup.alert_flag = true;
+        this.flag_check_timeout_QR = this.checkTimeout(timestamp_QR, this.limitedTime);
+        if (!this.flag_check_timeout_QR) {
+          this.popup.err_content1 = this.$t('message.step0-13');
+          this.popup.err_content2 = this.$t('message.step0-14');
+          this.popup.alert_flag = true;
         }
       }
 
-      self.loading = false;
+      this.loading = false;
     } else {
-      self.popup.err_content1 = this.$t('message.step0-10');
-      self.popup.err_content2 = this.$t('message.step0-11');
-      self.popup.alert_flag = true;
+      this.popup.err_content1 = this.$t('message.step0-10');
+      this.popup.err_content2 = this.$t('message.step0-11');
+      this.popup.alert_flag = true;
     }
     if (this.$route.query.email && this.flag_isEmailVerified) {
       this.flag_email = false;
@@ -219,18 +214,18 @@ export const StepToSelectIdType = {
     },
     orientation: function() {
       window.location.href = '#home';
-      // let card = [".card-1", ".card-2", ".card-3"];
-      let card = ['.card-1'];
+      // const card = [".card-1", ".card-2", ".card-3"];
+      const cards = ['.card-1'];
       switch (window.orientation) {
         case 0:
-          for (let c of card) {
-            document.querySelector(c).style.height = window.innerHeight / 2 + 'px';
+          for (let card of cards) {
+            document.querySelector(card).style.height = window.innerHeight / 2 + 'px';
           }
           comm.viewportZoomset(1.0, 1.0, 1.0);
           break;
         default:
-          for (let c of card) {
-            document.querySelector(c).style.height = window.innerHeight * 2.236842105263158 + 'px';
+          for (let card of cards) {
+            document.querySelector(card).style.height = window.innerHeight * 2.236842105263158 + 'px';
           }
           comm.viewportZoomset(0.45, 0.45, 0.45);
           break;
@@ -281,10 +276,13 @@ export const StepToSelectIdType = {
       window.location.href = '#home';
     },
     setScreenHeight() {
-      let card = ['.card-1'];
-      for (let c of card) {
-        if (window.orientation === 0) document.querySelector(c).style.height = window.innerHeight + 'px';
-        else document.querySelector(c).style.height = window.innerHeight * 2.236842105263158 + 'px';
+      const cards = ['.card-1'];
+      for (let card of cards) {
+        if (window.orientation === 0) {
+          document.querySelector(card).style.height = window.innerHeight + 'px';
+        } else {
+          document.querySelector(card).style.height = window.innerHeight * 2.236842105263158 + 'px';
+        }
       }
     },
     close_alert() {
@@ -292,8 +290,8 @@ export const StepToSelectIdType = {
       this.popup.alert_flag = false;
     },
     onResize() {
-      let x = window.innerWidth;
-      let y = window.innerHeight;
+      const x = window.innerWidth;
+      const y = window.innerHeight;
       if (x > y) {
         this.resizeFlag = 'horizontal';
       } else {
@@ -302,9 +300,8 @@ export const StepToSelectIdType = {
     },
     getCustomizationOptions: async function() {
       console.log('✔️ getCustomizationOptions');
-      let self = this;
-      let session = this.$session.get('_projectId');
-      let pid = session ? session : this.$route.query.pid;
+      const session = this.$session.get('_projectId');
+      const pid = session ? session : this.$route.query.pid;
       try {
         // 고객사가 정의한 옵션을 모두 가져온다.
         const getOptions = firebase
@@ -324,16 +321,18 @@ export const StepToSelectIdType = {
           this.ACT_OPTIONS(options.data);
           console.log('Use Email Verification', options.data.rs_emailVerification);
 
-          if (this.GET_LOGO) this.flag_email_wrap = true;
+          if (this.GET_LOGO) {
+            this.flag_email_wrap = true;
+          }
 
-          self.termsOfUse = options.data.rs_termsOfUse; //이용약관 url
-          self.privacyPolicy = options.data.rs_privacyPolicy; //개인정보정책 url
+          this.termsOfUse = options.data.rs_termsOfUse; //이용약관 url
+          this.privacyPolicy = options.data.rs_privacyPolicy; //개인정보정책 url
 
-          console.log('이용약관', self.termsOfUse);
-          console.log('개인정보정책', self.privacyPolicy);
+          console.log('이용약관', this.termsOfUse);
+          console.log('개인정보정책', this.privacyPolicy);
 
-          self.flag_options = true;
-          self.logoFlag = true;
+          this.flag_options = true;
+          this.logoFlag = true;
         } else {
           this.flag_options = false;
           this.logoFlag = true;
@@ -351,9 +350,9 @@ export const StepToSelectIdType = {
       const local_oobcode = comm.get_localStorage_with_expiry('_oobCode');
       const email_link_apikey = this.$route.query.apiKey;
       const email_link_oobcode = this.$route.query.oobCode;
-      let msg12 = this.$t('message.step0-12');
-      let msg15 = this.$t('message.step0-15');
-      let msg16 = this.$t('message.step0-16');
+      const msg12 = this.$t('message.step0-12');
+      const msg15 = this.$t('message.step0-15');
+      const msg16 = this.$t('message.step0-16');
       if (email_link_apikey && email_link_oobcode) {
         if (email_link_apikey !== 'Expired' || email_link_oobcode !== 'Expired') {
           if (local_apikey === 'no_apiky' && email_link_apikey) {
@@ -470,25 +469,24 @@ export const StepToSelectIdType = {
           this.popup.err_content1 = this.$t('message.step0-17');
           this.popup.err_content2 = this.$t('message.step0-16');
           this.popup.alert_flag = true;
-          let pid = this.$route.query.pid;
-          let cid = this.$route.query.email;
-          let link =
+          const pid = this.$route.query.pid;
+          const cid = this.$route.query.email;
+          const link =
             protocol + '//' + hostName + (port ? ':' + port : '') + `/main?pid=${pid}&email=${cid}&theme=${theme}`;
           window.location.href = link;
 
           return;
         }
-        let url = protocol + '//';
-        url += hostName;
-        url += port ? ':' + port : '';
-        url += `/main?pid=${projectId}&email=${email}&theme=${theme}`;
-        url += '&emailtime=' + Date.now();
+        const url =
+          protocol + '//' + hostName + port
+            ? ':' + port
+            : '' + `/main?pid=${projectId}&email=${email}&theme=${theme}` + '&emailtime=' + Date.now();
 
         const actionCodeSettings = {
           // URL you want to redirect back to. The domain (www.example.com) for this
           // URL must be whitelisted in the Firebase Console.
           // url: 'https://www.example.com/finishSignUp?cartId=1234',
-          url: url,
+          url,
           // This must be true.
           handleCodeInApp: true,
           // dynamicLinkDomain: 'lee-portfolio-add57.web.app',
@@ -511,21 +509,21 @@ export const StepToSelectIdType = {
         // Confirm the link is a sign-in with email link.
         // this.show_id_selector()
       } else {
-        self.popup.err_content1 = this.$t('message.step0-10');
-        self.popup.err_content2 = this.$t('message.step0-11');
-        self.popup.alert_flag = true;
+        this.popup.err_content1 = this.$t('message.step0-10');
+        this.popup.err_content2 = this.$t('message.step0-11');
+        this.popup.alert_flag = true;
       }
     },
     setLocation: async function() {
       console.log('✔️setLocation');
-      let alpha2_Code = await this.searchLocation();
+      const alpha2_Code = await this.searchLocation();
       if (alpha2_Code) {
         this.$store.state.search = this.convert_to_alpha3_code(alpha2_Code);
         this.$store.state.regionCode = true;
       }
     },
-    convert_to_alpha3_code(Alpha2_code) {
-      return countries.alpha2ToAlpha3(Alpha2_code);
+    convert_to_alpha3_code(alpha2_code) {
+      return countries.alpha2ToAlpha3(alpha2_code);
     },
     searchLocation: function() {
       console.log('✔️searchLocation');
@@ -715,7 +713,7 @@ export const StepToSelectIdType = {
       });
 
       let ms = this.limitedTime;
-      let qrTimer = setInterval(() => {
+      const qrTimer = setInterval(() => {
         // console.log(ms)
         if (ms < 0) {
           // this.$refs.timer.classList.add('off')
@@ -747,7 +745,7 @@ export const StepToSelectIdType = {
     },
     // noCam() {
     //   console.log('no cam')
-    //   self.$router.push({name:'Step1-1'})
+    //   this.$router.push({name:'Step1-1'})
     // },
   },
   destroyed() {
